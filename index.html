@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy-900:#0a1730;
-  --navy-800:#0f2347;
-  --navy-700:#163057;
-  --navy-600:#1d3d6e;
+  --navy-900:#0a3761;
+  --navy-800:#0a4780;
+  --navy-700:#0859a0;
+  --navy-600:#006dcc;
   --gold:#c9a23f;
   --gold-light:#e3c468;
   --gold-deep:#a8842b;
-  --ink:#0a1024;
+  --ink:#05213d;
   --paper:#f5f6f9;
   --white:#ffffff;
   --gray:#9aa6bd;
@@ -50,7 +50,7 @@ header{
   transition:background .4s ease,padding .4s ease,box-shadow .4s ease;
 }
 header.scrolled,header.solid{
-  background:rgba(10,23,48,.92);
+  background:rgba(10,55,97,.92);
   backdrop-filter:blur(12px);
   padding:12px clamp(20px,5vw,64px);
   box-shadow:0 1px 0 var(--line);
@@ -86,7 +86,7 @@ nav a.current{color:var(--gold)}
 }
 .hero-bg{position:absolute;inset:0;z-index:-2;
   background:
-    radial-gradient(120% 90% at 80% 10%,rgba(29,61,110,.7),transparent 60%),
+    radial-gradient(120% 90% at 80% 10%,rgba(0,109,204,.7),transparent 60%),
     radial-gradient(80% 80% at 10% 90%,rgba(201,162,63,.12),transparent 55%),
     linear-gradient(160deg,var(--navy-900),var(--ink));
 }
@@ -176,8 +176,8 @@ section{position:relative;z-index:2}
 .meaning-chip span{font-size:15px;font-weight:700}
 .concept p{color:#bcc6da;font-size:16px}
 .concept-card{position:relative;border:1px solid var(--line);border-radius:20px;padding:46px 40px;
-  background:linear-gradient(150deg,rgba(29,61,110,.5),rgba(10,23,48,.4));overflow:hidden}
-.concept-card::before{content:"↗";position:absolute;right:-10px;top:-30px;font-size:200px;color:rgba(201,162,63,.07);font-family:"Anton"}
+  background:linear-gradient(150deg,rgba(0,109,204,.5),rgba(10,55,97,.4));overflow:hidden}
+.concept-card::before{content:"\2197\FE0E";position:absolute;right:-10px;top:-30px;font-size:200px;color:rgba(201,162,63,.07);font-family:"Anton";-webkit-font-feature-settings:normal;font-variant-emoji:text}
 .concept-card h3{font-family:"Anton";font-size:clamp(34px,5vw,56px);line-height:1;color:var(--gold-light);margin-bottom:8px}
 .concept-card .jp{font-size:14px;color:var(--gray);letter-spacing:4px;margin-bottom:24px}
 .concept-card .big{font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.5}
@@ -188,7 +188,7 @@ section{position:relative;z-index:2}
   background:linear-gradient(160deg,var(--navy-600),var(--ink));display:grid;place-items:center}
 .coach-portrait .silhouette{font-family:"Anton";font-size:clamp(70px,13vw,150px);color:rgba(201,162,63,.18);letter-spacing:2px}
 .coach-portrait .badge{position:absolute;left:20px;bottom:20px;right:20px;
-  background:rgba(10,16,36,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+  background:rgba(5,33,61,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
 .coach-portrait .badge b{display:block;font-size:20px;font-weight:900}
 .coach-portrait .badge span{font-family:"Oswald";font-size:12px;letter-spacing:2px;color:var(--gold)}
 .coach h3{font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:4px}
@@ -232,7 +232,7 @@ section{position:relative;z-index:2}
 .panel-lead{color:#aab6cd;font-size:16px;margin-bottom:34px;max-width:680px}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .feat{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.02);transition:transform .3s,background .3s}
-.feat:hover{transform:translateY(-6px);background:rgba(29,61,110,.3)}
+.feat:hover{transform:translateY(-6px);background:rgba(0,109,204,.3)}
 .feat .ic{font-family:"Anton";font-size:28px;color:var(--gold);margin-bottom:14px}
 .feat h5{font-size:17px;font-weight:900;margin-bottom:8px}
 .feat p{font-size:14px;color:#aab6cd}
@@ -248,7 +248,7 @@ section{position:relative;z-index:2}
 .fact{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #dfe3ec;font-size:15px}
 .fact b{font-family:"Oswald";letter-spacing:1px;font-size:13px;color:var(--gold-deep)}
 .univ-cols{display:grid;gap:22px}
-.ucard{border:1px solid #e2e6ef;border-radius:16px;padding:24px;background:#fff;box-shadow:0 6px 24px -16px rgba(10,16,36,.4)}
+.ucard{border:1px solid #e2e6ef;border-radius:16px;padding:24px;background:#fff;box-shadow:0 6px 24px -16px rgba(5,33,61,.4)}
 .ucard h4{font-size:15px;font-weight:900;color:var(--navy-700);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .ucard h4::before{content:"";width:6px;height:18px;background:var(--gold-deep);border-radius:2px}
 .pills{display:flex;flex-wrap:wrap;gap:8px}
@@ -263,7 +263,7 @@ section{position:relative;z-index:2}
 .sup-list div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#c8d2e6}
 .sup-list .ck{color:var(--gold);font-weight:900}
 .pipeline{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.pipe{flex:1;min-width:130px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:22px 14px;background:linear-gradient(160deg,rgba(29,61,110,.4),rgba(10,23,48,.3));font-size:14px;font-weight:700;position:relative}
+.pipe{flex:1;min-width:130px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:22px 14px;background:linear-gradient(160deg,rgba(0,109,204,.4),rgba(10,55,97,.3));font-size:14px;font-weight:700;position:relative}
 .pipe .pic{font-size:24px;margin-bottom:8px;color:var(--gold)}
 
 /* news teaser (top) */
