@@ -357,6 +357,37 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
   .milestones{grid-template-columns:1fr}
   .ms.peak{grid-column:auto}
 }
+
+/* ===== SPONSORS ===== */
+#sponsors{position:relative}
+.sponsor-tier{margin-top:30px}
+.sponsor-tier + .sponsor-tier{margin-top:46px}
+.tier-label{display:flex;align-items:center;gap:14px;font-family:"Oswald";letter-spacing:3px;font-size:13px;text-transform:uppercase;margin-bottom:20px}
+.tier-label .ln{flex:1;height:1px;background:var(--line)}
+.tier-label.gold span{color:var(--gold)}
+.tier-label.std span{color:var(--gray)}
+.sponsor-grid{display:grid;gap:18px}
+.sponsor-grid.gold{grid-template-columns:repeat(3,1fr)}
+.sponsor-grid.std{grid-template-columns:repeat(5,1fr)}
+.sponsor{position:relative;display:grid;place-items:center;background:#fff;border-radius:14px;
+  border:1px solid rgba(255,255,255,.6);padding:18px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.sponsor:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,.5)}
+.sponsor.lg{aspect-ratio:16/7;padding:26px}
+.sponsor.sm{aspect-ratio:16/9}
+.sponsor img{position:relative;z-index:1;max-width:84%;max-height:74%;object-fit:contain;display:block}
+.sponsor .ph{position:absolute;inset:0;z-index:0;display:grid;place-items:center;text-align:center;padding:10px;
+  font-family:"Oswald";font-weight:600;letter-spacing:1px;color:#1b2a4a}
+.sponsor.lg .ph{font-size:17px}
+.sponsor.sm .ph{font-size:12px}
+.sponsor-note{margin-top:30px;font-size:13px;color:var(--gray);border-left:3px solid var(--gold);padding-left:16px}
+@media(max-width:820px){
+  .sponsor-grid.gold{grid-template-columns:repeat(2,1fr)}
+  .sponsor-grid.std{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:520px){
+  .sponsor-grid.gold{grid-template-columns:1fr}
+  .sponsor-grid.std{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -434,6 +465,56 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
     <div style="margin-top:34px" class="reveal" data-d="2">
       <a href="news.html" class="btn btn-ghost">ニュース一覧へ →</a>
     </div>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">PARTNERS</div>
+      <h2>スポンサー・<em>パートナー</em>。</h2>
+      <p>SGK ASCENDERS の挑戦を支えてくださる企業・団体の皆様です。</p>
+    </div>
+
+    <!-- ▼▼▼ ゴールドスポンサー（上段・大きめ）ここから編集 ▼▼▼
+         ロゴ画像は images/sponsors/ に置き、src を差し替えてください。
+         画像が無い場合は社名（.ph のテキスト）が表示されます。 -->
+    <div class="sponsor-tier reveal" data-d="1">
+      <div class="tier-label gold"><span>GOLD SPONSORS</span><i class="ln"></i></div>
+      <div class="sponsor-grid gold">
+        <a class="sponsor lg" href="#" target="_blank" rel="noopener">
+          <img src="images/sponsors/gold-1.png" alt="ゴールドスポンサー1" onerror="this.style.display='none'">
+          <span class="ph">GOLD SPONSOR 01</span>
+        </a>
+        <a class="sponsor lg" href="#" target="_blank" rel="noopener">
+          <img src="images/sponsors/gold-2.png" alt="ゴールドスポンサー2" onerror="this.style.display='none'">
+          <span class="ph">GOLD SPONSOR 02</span>
+        </a>
+        <a class="sponsor lg" href="#" target="_blank" rel="noopener">
+          <img src="images/sponsors/gold-3.png" alt="ゴールドスポンサー3" onerror="this.style.display='none'">
+          <span class="ph">GOLD SPONSOR 03</span>
+        </a>
+      </div>
+    </div>
+    <!-- ▲▲▲ ゴールドスポンサーここまで ▲▲▲ -->
+
+    <!-- ▼▼▼ 通常スポンサー（下段・小さめ）ここから編集 ▼▼▼ -->
+    <div class="sponsor-tier reveal" data-d="2">
+      <div class="tier-label std"><span>OFFICIAL PARTNERS</span><i class="ln"></i></div>
+      <div class="sponsor-grid std">
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/1.png" alt="スポンサー1" onerror="this.style.display='none'"><span class="ph">SPONSOR 01</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/2.png" alt="スポンサー2" onerror="this.style.display='none'"><span class="ph">SPONSOR 02</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/3.png" alt="スポンサー3" onerror="this.style.display='none'"><span class="ph">SPONSOR 03</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/4.png" alt="スポンサー4" onerror="this.style.display='none'"><span class="ph">SPONSOR 04</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/5.png" alt="スポンサー5" onerror="this.style.display='none'"><span class="ph">SPONSOR 05</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/6.png" alt="スポンサー6" onerror="this.style.display='none'"><span class="ph">SPONSOR 06</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/7.png" alt="スポンサー7" onerror="this.style.display='none'"><span class="ph">SPONSOR 07</span></a>
+        <a class="sponsor sm" href="#" target="_blank" rel="noopener"><img src="images/sponsors/8.png" alt="スポンサー8" onerror="this.style.display='none'"><span class="ph">SPONSOR 08</span></a>
+      </div>
+    </div>
+    <!-- ▲▲▲ 通常スポンサーここまで ▲▲▲ -->
+
+    <p class="sponsor-note reveal" data-d="3">※ 表示はサンプルです。ロゴ画像を images/sponsors/ に配置し、リンク先（href）を各社サイトに差し替えてご利用ください。スポンサー募集に関するお問い合わせも承ります。</p>
   </div>
 </section>
 
