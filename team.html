@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAM｜SGK ASCENDERS 至学館大学 男子バスケットボール部</title>
+<meta name="description" content="SGK ASCENDERS のチーム情報。ヘッドコーチ伊藤彰浩、5カ年成長ロードマップ、年度別強化計画、サポート体制。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0a1730;
+  --navy-800:#0f2347;
+  --navy-700:#163057;
+  --navy-600:#1d3d6e;
+  --gold:#c9a23f;
+  --gold-light:#e3c468;
+  --gold-deep:#a8842b;
+  --ink:#0a1024;
+  --paper:#f5f6f9;
+  --white:#ffffff;
+  --gray:#9aa6bd;
+  --line:rgba(201,162,63,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  background:var(--navy-900);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.grain{
+  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,64px);
+  transition:background .4s ease,padding .4s ease,box-shadow .4s ease;
+}
+header.scrolled,header.solid{
+  background:rgba(10,23,48,.92);
+  backdrop-filter:blur(12px);
+  padding:12px clamp(20px,5vw,64px);
+  box-shadow:0 1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:46px;height:46px;border:2px solid var(--gold);border-radius:8px;
+  display:grid;place-items:center;font-family:"Anton";font-size:18px;
+  color:var(--gold);letter-spacing:1px;background:rgba(201,162,63,.06);
+}
+.brand-text b{font-family:"Oswald";font-weight:600;letter-spacing:3px;font-size:16px;display:block;line-height:1}
+.brand-text span{font-size:10px;color:var(--gray);letter-spacing:2px}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:13px;letter-spacing:1px;color:#c5cee0;position:relative;padding:4px 0;transition:color .25s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+nav a:hover{color:var(--white)}
+nav a:hover::after,nav a.current::after{width:100%}
+nav a.current{color:var(--gold)}
+.nav-cta{
+  border:1px solid var(--gold);color:var(--gold);padding:9px 20px;border-radius:30px;
+  font-size:12px;letter-spacing:1px;transition:all .3s;
+}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+.nav-cta::after{display:none}
+.nav-cta.current{background:var(--gold);color:var(--ink)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger span{width:26px;height:2px;background:var(--white);transition:.3s}
+
+/* ---------- hero (Top) ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px clamp(20px,6vw,90px) 80px;overflow:hidden;z-index:2;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(120% 90% at 80% 10%,rgba(29,61,110,.7),transparent 60%),
+    radial-gradient(80% 80% at 10% 90%,rgba(201,162,63,.12),transparent 55%),
+    linear-gradient(160deg,var(--navy-900),var(--ink));
+}
+.hero-court{position:absolute;inset:0;z-index:-1;opacity:.16;
+  background-image:
+    linear-gradient(var(--gold) 1px,transparent 1px),
+    linear-gradient(90deg,var(--gold) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(120% 100% at 70% 30%,#000 30%,transparent 75%);
+  mask-image:radial-gradient(120% 100% at 70% 30%,#000 30%,transparent 75%);
+}
+.hero-arc{position:absolute;right:-12%;top:50%;transform:translateY(-50%);
+  width:min(70vw,820px);aspect-ratio:1;border:2px solid var(--line);border-radius:50%;z-index:-1;
+  animation:spin 60s linear infinite;}
+.hero-arc::before{content:"";position:absolute;inset:9%;border:1px solid rgba(201,162,63,.18);border-radius:50%}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
+.hero-inner{max-width:980px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Oswald";letter-spacing:4px;
+  font-size:13px;color:var(--gold);margin-bottom:26px;opacity:0;transform:translateY(20px);
+  animation:rise .9s .2s forwards;}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
+.hero h1{font-family:"Anton";font-weight:400;line-height:.92;letter-spacing:1px;
+  font-size:clamp(56px,11vw,150px);margin-bottom:8px;
+  background:linear-gradient(180deg,#fff 40%,#bcc8e0);-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;transform:translateY(30px);animation:rise 1s .35s forwards;}
+.hero h1 .gold{background:linear-gradient(180deg,var(--gold-light),var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(20px,3.2vw,34px);font-weight:900;letter-spacing:2px;margin-bottom:22px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .5s forwards;}
+.hero-tag{display:flex;gap:14px;flex-wrap:wrap;font-family:"Oswald";font-size:clamp(15px,2.4vw,22px);
+  letter-spacing:3px;color:var(--gold-light);margin-bottom:36px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .62s forwards;}
+.hero-tag span{position:relative}
+.hero-tag span:not(:last-child)::after{content:"×";margin-left:14px;color:var(--gray)}
+.hero-lead{max-width:560px;color:#c8d2e6;font-size:16px;margin-bottom:42px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .74s forwards;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(30px);animation:rise 1s .86s forwards;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:40px;
+  font-weight:700;letter-spacing:1px;font-size:14px;transition:all .3s;cursor:pointer;border:none;}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));color:var(--ink);
+  box-shadow:0 10px 30px -8px rgba(201,162,63,.5)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 40px -8px rgba(201,162,63,.6)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  font-family:"Oswald";font-size:11px;letter-spacing:3px;color:var(--gray);text-align:center;
+  opacity:0;animation:rise 1s 1.2s forwards;}
+.scroll-hint .line{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);margin:10px auto 0;position:relative;overflow:hidden}
+.scroll-hint .line::after{content:"";position:absolute;top:-46px;left:0;width:1px;height:46px;background:var(--gold);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%{top:-46px}60%,100%{top:46px}}
+
+/* ---------- page hero (sub pages) ---------- */
+.page-hero{position:relative;padding:150px clamp(20px,6vw,90px) 70px;overflow:hidden;z-index:2;
+  background:linear-gradient(160deg,var(--navy-800),var(--ink))}
+.page-hero .hero-court{opacity:.12}
+.page-hero-inner{max-width:1180px;margin:0 auto;position:relative}
+.page-hero .eyebrow{animation:none;opacity:1;transform:none}
+.page-hero h1{font-family:"Anton";font-weight:400;font-size:clamp(44px,9vw,96px);line-height:1;letter-spacing:1px;
+  background:linear-gradient(180deg,#fff 45%,#bcc8e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero .jp{font-size:clamp(16px,2.6vw,22px);font-weight:900;margin-top:10px}
+.breadcrumb{font-family:"Oswald";font-size:12px;letter-spacing:1px;color:var(--gray);margin-top:22px}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ---------- sections ---------- */
+section{position:relative;z-index:2}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(80px,12vw,150px) clamp(20px,5vw,40px)}
+.wrap.tight{padding-top:clamp(60px,8vw,90px)}
+.sec-head{margin-bottom:60px;max-width:760px}
+.sec-tag{font-family:"Oswald";letter-spacing:4px;font-size:13px;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-tag::before{content:"";width:34px;height:1px;background:var(--gold)}
+.sec-head h2{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.2;letter-spacing:1px}
+.sec-head h2 em{font-style:normal;color:var(--gold)}
+.sec-head p{color:#aab6cd;margin-top:18px;font-size:16px}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}
+.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}
+
+/* concept */
+.alt-navy{background:linear-gradient(180deg,var(--navy-900),var(--navy-800))}
+.concept{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.concept-meaning{display:flex;gap:18px;margin:30px 0;flex-wrap:wrap}
+.meaning-chip{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:rgba(255,255,255,.02);flex:1;min-width:140px}
+.meaning-chip b{font-family:"Oswald";font-size:13px;letter-spacing:2px;color:var(--gold);display:block;margin-bottom:6px}
+.meaning-chip span{font-size:15px;font-weight:700}
+.concept p{color:#bcc6da;font-size:16px}
+.concept-card{position:relative;border:1px solid var(--line);border-radius:20px;padding:46px 40px;
+  background:linear-gradient(150deg,rgba(29,61,110,.5),rgba(10,23,48,.4));overflow:hidden}
+.concept-card::before{content:"↗";position:absolute;right:-10px;top:-30px;font-size:200px;color:rgba(201,162,63,.07);font-family:"Anton"}
+.concept-card h3{font-family:"Anton";font-size:clamp(34px,5vw,56px);line-height:1;color:var(--gold-light);margin-bottom:8px}
+.concept-card .jp{font-size:14px;color:var(--gray);letter-spacing:4px;margin-bottom:24px}
+.concept-card .big{font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.5}
+
+/* coach */
+.coach{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.coach-portrait{position:relative;border:1px solid var(--line);border-radius:20px;aspect-ratio:3/4;overflow:hidden;
+  background:linear-gradient(160deg,var(--navy-600),var(--ink));display:grid;place-items:center}
+.coach-portrait .silhouette{font-family:"Anton";font-size:clamp(70px,13vw,150px);color:rgba(201,162,63,.18);letter-spacing:2px}
+.coach-portrait .badge{position:absolute;left:20px;bottom:20px;right:20px;
+  background:rgba(10,16,36,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.coach-portrait .badge b{display:block;font-size:20px;font-weight:900}
+.coach-portrait .badge span{font-family:"Oswald";font-size:12px;letter-spacing:2px;color:var(--gold)}
+.coach h3{font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:4px}
+.coach .role{font-family:"Oswald";letter-spacing:3px;color:var(--gold);font-size:14px;margin-bottom:26px}
+.highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:34px}
+.hl{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02);font-size:14px;font-weight:700;display:flex;gap:10px;align-items:flex-start}
+.hl .dot{color:var(--gold);font-size:18px;line-height:1.2}
+.career h4{font-family:"Oswald";letter-spacing:2px;font-size:13px;color:var(--gold);margin-bottom:16px}
+.career ul{list-style:none;display:grid;gap:10px}
+.career li{font-size:14px;color:#c2cce0;padding-left:22px;position:relative}
+.career li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border:1px solid var(--gold);border-radius:50%}
+.quote{margin-top:30px;font-size:clamp(17px,2.5vw,22px);font-weight:900;line-height:1.5;color:var(--gold-light)}
+
+/* roadmap */
+.bg-ink{background:var(--ink);overflow:hidden}
+.roadmap-track{position:relative;margin-top:50px}
+.road-line{position:absolute;left:0;right:0;top:78px;height:2px;background:linear-gradient(90deg,rgba(201,162,63,.2),var(--gold),rgba(201,162,63,.2))}
+.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}
+.ms{text-align:center;position:relative;padding-top:30px}
+.ms .node{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;position:relative;
+  border:2px solid var(--line);background:radial-gradient(circle at 30% 25%,var(--navy-600),var(--ink));transition:transform .4s,border-color .4s,box-shadow .4s}
+.ms .node .yr{font-family:"Anton";font-size:22px;color:var(--gold-light)}
+.ms:hover .node{transform:translateY(-8px) scale(1.06);border-color:var(--gold);box-shadow:0 14px 40px -10px rgba(201,162,63,.5)}
+.ms.peak .node{border-color:var(--gold);background:radial-gradient(circle at 30% 25%,var(--gold),var(--gold-deep));box-shadow:0 0 50px -6px rgba(201,162,63,.65)}
+.ms.peak .node .yr{color:var(--ink)}
+.ms h4{font-size:15px;font-weight:900;margin-bottom:4px}
+.ms span{font-family:"Oswald";font-size:12px;letter-spacing:1px;color:var(--gray)}
+.ms.peak h4{color:var(--gold-light)}
+
+/* yearly plans */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.tab{font-family:"Oswald";letter-spacing:1px;font-size:13px;padding:12px 22px;border-radius:30px;
+  border:1px solid var(--line);background:transparent;color:#c2cce0;cursor:pointer;transition:all .3s}
+.tab.active{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+.panel{display:none;animation:fade .5s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+.panel-head .pyear{font-family:"Anton";font-size:clamp(40px,7vw,76px);color:var(--gold-light);line-height:1}
+.panel-head h3{font-size:clamp(22px,3.5vw,32px);font-weight:900}
+.panel-lead{color:#aab6cd;font-size:16px;margin-bottom:34px;max-width:680px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.feat{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.02);transition:transform .3s,background .3s}
+.feat:hover{transform:translateY(-6px);background:rgba(29,61,110,.3)}
+.feat .ic{font-family:"Anton";font-size:28px;color:var(--gold);margin-bottom:14px}
+.feat h5{font-size:17px;font-weight:900;margin-bottom:8px}
+.feat p{font-size:14px;color:#aab6cd}
+
+/* university */
+.bg-paper{background:var(--paper);color:var(--ink)}
+.bg-paper .sec-tag{color:var(--gold-deep)}
+.bg-paper .sec-tag::before{background:var(--gold-deep)}
+.bg-paper .sec-head h2 em{color:var(--gold-deep)}
+.bg-paper .sec-head p{color:#5a6275}
+.univ-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.univ-facts{display:grid;gap:0;border-top:1px solid #dfe3ec}
+.fact{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #dfe3ec;font-size:15px}
+.fact b{font-family:"Oswald";letter-spacing:1px;font-size:13px;color:var(--gold-deep)}
+.univ-cols{display:grid;gap:22px}
+.ucard{border:1px solid #e2e6ef;border-radius:16px;padding:24px;background:#fff;box-shadow:0 6px 24px -16px rgba(10,16,36,.4)}
+.ucard h4{font-size:15px;font-weight:900;color:var(--navy-700);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.ucard h4::before{content:"";width:6px;height:18px;background:var(--gold-deep);border-radius:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12.5px;background:#eef1f7;color:#3a445c;padding:6px 13px;border-radius:20px;font-weight:500}
+
+/* support */
+.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:46px}
+.sup-box{border:1px solid var(--line);border-radius:18px;padding:36px;background:rgba(255,255,255,.02)}
+.sup-box h3{font-size:20px;font-weight:900;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.sup-box h3 .num{font-family:"Anton";color:var(--gold);font-size:24px}
+.sup-list{display:grid;gap:12px}
+.sup-list div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#c8d2e6}
+.sup-list .ck{color:var(--gold);font-weight:900}
+.pipeline{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.pipe{flex:1;min-width:130px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:22px 14px;background:linear-gradient(160deg,rgba(29,61,110,.4),rgba(10,23,48,.3));font-size:14px;font-weight:700;position:relative}
+.pipe .pic{font-size:24px;margin-bottom:8px;color:var(--gold)}
+
+/* news teaser (top) */
+.news-teaser{display:grid;gap:0;border-top:1px solid var(--line)}
+.nt-row{display:grid;grid-template-columns:130px 120px 1fr auto;gap:20px;align-items:center;
+  padding:22px 6px;border-bottom:1px solid var(--line);transition:background .25s}
+.nt-row:hover{background:rgba(255,255,255,.03)}
+.nt-row time{font-family:"Oswald";letter-spacing:1px;color:var(--gray);font-size:14px}
+.nt-cat{font-size:11px;letter-spacing:1px;border:1px solid var(--line);color:var(--gold);border-radius:20px;padding:4px 12px;text-align:center;justify-self:start}
+.nt-row p{font-size:15px;font-weight:500}
+.nt-row .arr{color:var(--gold);font-family:"Oswald"}
+
+/* news page list */
+.news-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.news-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:140px 130px 1fr;gap:24px;align-items:start;
+  padding:28px 6px;border-bottom:1px solid var(--line);transition:background .25s;cursor:pointer}
+.news-item:hover{background:rgba(255,255,255,.03)}
+.news-item time{font-family:"Oswald";letter-spacing:1px;color:var(--gray);font-size:15px;padding-top:2px}
+.news-item .nt-cat{align-self:start}
+.news-item h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.news-item p{font-size:14px;color:#aab6cd}
+.news-empty{margin-top:30px;color:var(--gray);font-size:14px;border-left:3px solid var(--gold);padding-left:16px}
+
+/* message / cta */
+.message{position:relative;overflow:hidden;text-align:center;background:linear-gradient(160deg,var(--navy-800),var(--ink))}
+.message .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(60% 60% at 50% 40%,rgba(201,162,63,.18),transparent 70%)}
+.msg-inner{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.msg-eyebrow{font-family:"Oswald";letter-spacing:5px;color:var(--gold);font-size:14px;margin-bottom:24px}
+.msg-logo{font-family:"Anton";font-size:clamp(40px,9vw,110px);line-height:.95;letter-spacing:2px;
+  background:linear-gradient(180deg,#fff,#aebbd6);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px}
+.msg-tag{font-family:"Oswald";font-size:clamp(18px,3.4vw,30px);letter-spacing:3px;color:var(--gold-light);margin-bottom:30px}
+.msg-tag span:not(:last-child)::after{content:"×";margin:0 12px;color:var(--gray)}
+.msg-big{font-size:clamp(28px,6vw,58px);font-weight:900;line-height:1.25;margin-bottom:44px}
+.msg-big em{font-style:normal;color:var(--gold-light)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.contact-info p{color:#aab6cd;margin-bottom:26px}
+.ci{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.ci .ic{width:42px;height:42px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--gold);flex-shrink:0;font-size:18px}
+.ci b{display:block;font-family:"Oswald";letter-spacing:1px;font-size:12px;color:var(--gold);margin-bottom:2px}
+.ci span{font-size:15px}
+form{display:grid;gap:18px}
+.field{display:grid;gap:8px}
+.field label{font-size:13px;letter-spacing:1px;color:#c2cce0}
+.field input,.field textarea,.field select{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;
+  padding:14px 16px;color:#fff;font-family:inherit;font-size:15px;transition:border .3s,background .3s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.06)}
+.field select option{background:var(--navy-800)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-note{font-size:12px;color:var(--gray)}
+
+/* footer */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp(20px,5vw,40px) 40px}
+.foot-top{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(201,162,63,.15)}
+.foot-brand .brand-mark{margin-bottom:16px}
+.foot-brand p{color:var(--gray);font-size:14px;max-width:300px}
+.foot-nav{display:flex;gap:60px;flex-wrap:wrap}
+.foot-col h5{font-family:"Oswald";letter-spacing:2px;font-size:12px;color:var(--gold);margin-bottom:16px}
+.foot-col a{display:block;font-size:14px;color:#aab6cd;margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:1180px;margin:30px auto 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--gray)}
+.socials{display:flex;gap:14px}
+.socials a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#c2cce0;transition:all .3s;font-size:13px;font-family:"Oswald"}
+.socials a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* mobile */
+@media(max-width:900px){
+  nav{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--navy-800);
+    flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:transform .4s;box-shadow:-20px 0 60px rgba(0,0,0,.5);z-index:99}
+  nav.open{transform:none}
+  .burger{display:flex;z-index:101}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .concept,.coach,.univ-grid,.contact-grid,.support-grid{grid-template-columns:1fr;gap:36px}
+  .highlight-grid{grid-template-columns:1fr}
+  .milestones{grid-template-columns:repeat(2,1fr);gap:30px}
+  .road-line{display:none}
+  .ms.peak{grid-column:span 2}
+  .two{grid-template-columns:1fr}
+  .coach-portrait{aspect-ratio:4/3}
+  .nt-row{grid-template-columns:1fr;gap:6px;align-items:start}
+  .nt-row .arr{display:none}
+  .news-item{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:520px){
+  .hero-tag{font-size:14px}
+  .milestones{grid-template-columns:1fr}
+  .ms.peak{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header id="header" class="solid">
+  <a href="index.html" class="brand">
+    <div class="brand-mark">SGK</div>
+    <div class="brand-text"><b>ASCENDERS</b><span>SHIGAKKAN UNIVERSITY</span></div>
+  </a>
+  <nav id="nav">
+    <a href="index.html">TOP</a>
+    <a href="team.html" class="current">TEAM</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <div class="hero-court"></div>
+  <div class="page-hero-inner">
+    <div class="eyebrow">SGK ASCENDERS</div>
+    <h1>TEAM</h1>
+    <div class="jp">チーム紹介・強化方針</div>
+    <div class="breadcrumb"><a href="index.html">TOP</a> &nbsp;/&nbsp; TEAM</div>
+  </div>
+</section>
+
+<!-- ROSTER / 選手名鑑 -->
+<section id="roster" class="roster">
+  <div class="roster-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-tag">ROSTER 2026</div>
+      <h2>選手一覧</h2>
+      <p>SGK ASCENDERS 選手一覧。ポジション・学年で絞り込めます。写真をタップするとプロフィールが開きます。</p>
+    </div>
+
+    <div class="roster-filters" data-reveal style="--rd:.08s">
+      <div class="filter-row">
+        <span class="filter-label">POSITION</span>
+        <div class="filter-btns" data-group="pos">
+          <button class="pf active" data-v="all">ALL</button>
+          <button class="pf" data-v="G">GUARD</button>
+          <button class="pf" data-v="F">FORWARD</button>
+          <button class="pf" data-v="C">CENTER</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">学年</span>
+        <div class="filter-btns" data-group="year">
+          <button class="pf active" data-v="all">ALL</button>
+          <button class="pf" data-v="1">1年</button>
+          <button class="pf" data-v="2">2年</button>
+          <button class="pf" data-v="3">3年</button>
+          <button class="pf" data-v="4">4年</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      ▼▼▼ 選手情報の編集はここから ▼▼▼
+      ・data-pos … ポジション絞り込み（G / F / C）  ・data-year … 学年絞り込み（1〜4）  ・player-no … 背番号
+      ・写真がある場合は <button class="player-img"> 内の <span class="player-silh">..</span> を
+        <img src="..." alt="名前"> に差し替え（toggle は残す）
+      ・アコーディオン内 = 身長 / 学年 / POS / 出身校 / プロフィール
+      ・aria-controls と panel id（pp-番号）は選手ごとに一意に
+    -->
+    <div class="roster-grid" data-reveal style="--rd:.16s">
+
+      <article class="player" data-pos="G" data-year="4">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-0">
+          <img class="player-photo" loading="lazy" src="images/players/0.jpg" alt="山田 太郎" onerror="this.style.display='none'">
+          <span class="player-silh">YT</span>
+          <span class="player-no">0</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">GUARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">山田 太郎</div>
+          <div class="player-name-en">YAMADA TARO</div>
+          <div class="player-panel" id="pp-0" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>178<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>4年</dd></div>
+                <div><dt>POS</dt><dd>PG</dd></div>
+                <div class="full"><dt>出身校</dt><dd>中央高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>チームの司令塔。広い視野と勝負強いゲームメイクで、攻撃のリズムを作り出す。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="G" data-year="3">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-5">
+          <img class="player-photo" loading="lazy" src="images/players/5.jpg" alt="鈴木 健太" onerror="this.style.display='none'">
+          <span class="player-silh">SK</span>
+          <span class="player-no">5</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">GUARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">鈴木 健太</div>
+          <div class="player-name-en">SUZUKI KENTA</div>
+          <div class="player-panel" id="pp-5" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>185<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>3年</dd></div>
+                <div><dt>POS</dt><dd>SG</dd></div>
+                <div class="full"><dt>出身校</dt><dd>東和高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>キャッチ＆シュートを得意とするシューター。要所での3Pがチームを勢いづける。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="G" data-year="2">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-7">
+          <img class="player-photo" loading="lazy" src="images/players/7.jpg" alt="佐藤 大輔" onerror="this.style.display='none'">
+          <span class="player-silh">SD</span>
+          <span class="player-no">7</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">GUARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">佐藤 大輔</div>
+          <div class="player-name-en">SATO DAISUKE</div>
+          <div class="player-panel" id="pp-7" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>183<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>2年</dd></div>
+                <div><dt>POS</dt><dd>SG</dd></div>
+                <div class="full"><dt>出身校</dt><dd>青陵高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>運動量豊富なコンボガード。ディフェンスから速攻へ、タフな展開で違いを生む。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="F" data-year="4">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-10">
+          <img class="player-photo" loading="lazy" src="images/players/10.jpg" alt="高橋 翔" onerror="this.style.display='none'">
+          <span class="player-silh">TS</span>
+          <span class="player-no">10</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">FORWARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">高橋 翔</div>
+          <div class="player-name-en">TAKAHASHI SHO</div>
+          <div class="player-panel" id="pp-10" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>190<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>4年</dd></div>
+                <div><dt>POS</dt><dd>SF</dd></div>
+                <div class="full"><dt>出身校</dt><dd>明星学園高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>攻守の要となるキャプテン。両エンドで強度を示し、チームを背中で引っ張る。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="F" data-year="3">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-11">
+          <img class="player-photo" loading="lazy" src="images/players/11.jpg" alt="田中 蓮" onerror="this.style.display='none'">
+          <span class="player-silh">TR</span>
+          <span class="player-no">11</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">FORWARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">田中 蓮</div>
+          <div class="player-name-en">TANAKA REN</div>
+          <div class="player-panel" id="pp-11" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>192<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>3年</dd></div>
+                <div><dt>POS</dt><dd>SF</dd></div>
+                <div class="full"><dt>出身校</dt><dd>湊西高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>サイズのあるウイング。ドライブとアウトサイドを兼ね備えた万能型スコアラー。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="F" data-year="2">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-14">
+          <img class="player-photo" loading="lazy" src="images/players/14.jpg" alt="渡辺 颯" onerror="this.style.display='none'">
+          <span class="player-silh">WH</span>
+          <span class="player-no">14</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">FORWARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">渡辺 颯</div>
+          <div class="player-name-en">WATANABE HAYATE</div>
+          <div class="player-panel" id="pp-14" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>196<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>2年</dd></div>
+                <div><dt>POS</dt><dd>PF</dd></div>
+                <div class="full"><dt>出身校</dt><dd>北稜高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>高い身体能力を活かしたリバウンダー。セカンドチャンスとトランジションが武器。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="F" data-year="3">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-21">
+          <img class="player-photo" loading="lazy" src="images/players/21.jpg" alt="伊藤 陸" onerror="this.style.display='none'">
+          <span class="player-silh">IR</span>
+          <span class="player-no">21</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">FORWARD</div>
+        <div class="player-body">
+          <div class="player-name-jp">伊藤 陸</div>
+          <div class="player-name-en">ITO RIKU</div>
+          <div class="player-panel" id="pp-21" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>198<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>3年</dd></div>
+                <div><dt>POS</dt><dd>PF</dd></div>
+                <div class="full"><dt>出身校</dt><dd>白嶺高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>インサイドの強さとミドルレンジを兼備。ピック＆ロールの起点としても機能する。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="C" data-year="4">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-34">
+          <img class="player-photo" loading="lazy" src="images/players/34.jpg" alt="中村 大樹" onerror="this.style.display='none'">
+          <span class="player-silh">ND</span>
+          <span class="player-no">34</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">CENTER</div>
+        <div class="player-body">
+          <div class="player-name-jp">中村 大樹</div>
+          <div class="player-name-en">NAKAMURA DAIKI</div>
+          <div class="player-panel" id="pp-34" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>203<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>4年</dd></div>
+                <div><dt>POS</dt><dd>C</dd></div>
+                <div class="full"><dt>出身校</dt><dd>海星高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>リング下を支配する大黒柱。ペイントでの得点とゴール下のプロテクトを担う。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-pos="C" data-year="2">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="pp-45">
+          <img class="player-photo" loading="lazy" src="images/players/45.jpg" alt="小林 剛" onerror="this.style.display='none'">
+          <span class="player-silh">KT</span>
+          <span class="player-no">45</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">CENTER</div>
+        <div class="player-body">
+          <div class="player-name-jp">小林 剛</div>
+          <div class="player-name-en">KOBAYASHI TSUYOSHI</div>
+          <div class="player-panel" id="pp-45" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>身長</dt><dd>201<i>cm</i></dd></div>
+                <div><dt>学年</dt><dd>2年</dd></div>
+                <div><dt>POS</dt><dd>C</dd></div>
+                <div class="full"><dt>出身校</dt><dd>蒼空高校</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">PROFILE</span>
+                <p>走れるビッグマン。スクリーンとフィニッシュで、攻撃に厚みをもたらす。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <!-- ▲▲▲ 選手情報の編集はここまで ▲▲▲ -->
+
+    <p class="roster-empty">該当する選手がいません。</p>
+    <p class="roster-note" data-reveal>※ 上記は表示サンプルです。実際の選手情報に差し替えてご利用ください。</p>
+  </div>
+
+  <style>
+  /* ===== ROSTER / 選手名鑑 — matched to site tokens (gold / navy) ===== */
+  #roster{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--navy-800),var(--navy-900))}
+  .roster .roster-bg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.10;
+    background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 82% 8%,#000 28%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 82% 8%,#000 28%,transparent 72%)}
+  .roster .wrap{position:relative;z-index:1}
+
+  /* filter (mirrors .tab look, but separate class so main.js .tab handler ignores it) */
+  .roster .roster-filters{display:grid;gap:14px;margin-bottom:40px}
+  .roster .filter-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .roster .filter-label{font-family:"Oswald";font-size:12px;letter-spacing:2px;color:var(--gray);min-width:78px}
+  .roster .filter-btns{display:flex;gap:8px;flex-wrap:wrap}
+  .roster .roster-empty{display:none;margin-top:24px;font-size:14px;color:var(--gray);border-left:3px solid var(--gold);padding-left:16px}
+  @media(max-width:560px){.roster .filter-label{min-width:0;width:100%}}
+  .roster .pf{font-family:"Oswald";letter-spacing:1px;font-size:13px;padding:12px 22px;border-radius:30px;
+    border:1px solid var(--line);background:transparent;color:#c2cce0;cursor:pointer;transition:all .3s}
+  .roster .pf:hover{color:#fff;border-color:var(--gold)}
+  .roster .pf.active{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+
+  /* grid */
+  .roster .roster-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+
+  /* card — photo-forward */
+  .roster .player{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;
+    background:rgba(255,255,255,.02);padding:0;isolation:isolate;
+    transition:transform .35s,background .35s,border-color .35s,box-shadow .35s}
+  .roster .player:hover{transform:translateY(-6px);background:rgba(29,61,110,.3);border-color:var(--gold);
+    box-shadow:0 22px 48px -22px rgba(201,162,63,.4)}
+  .roster .player.open{border-color:var(--gold);background:rgba(29,61,110,.25)}
+
+  /* large photo area (face-forward) */
+  .roster .player-img{appearance:none;-webkit-appearance:none;display:block;position:relative;cursor:pointer;
+    width:100%;aspect-ratio:4/5;border:0;border-radius:0;padding:0;overflow:hidden;
+    background:radial-gradient(circle at 50% 30%,var(--navy-600),var(--ink));transition:filter .35s}
+  .roster .player-img::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;z-index:2;pointer-events:none;
+    background:linear-gradient(to top,rgba(7,11,24,.92),rgba(7,11,24,.35) 45%,transparent)}
+  .roster .player-img:hover{filter:brightness(1.05)}
+  .roster .player-img:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+  .roster .player-photo{position:relative;z-index:1;width:100%;height:100%;display:block;
+    object-fit:cover;object-position:center var(--face,22%)}
+  /* fallback shown until a photo file exists (or if it fails to load) */
+  .roster .player-silh{position:absolute;inset:0;z-index:0;display:grid;place-items:center;
+    font-family:"Anton";font-size:64px;letter-spacing:2px;color:rgba(227,196,104,.22)}
+
+  /* jersey / seq number, overlaid on the photo */
+  .roster .player-no{position:absolute;left:16px;bottom:8px;z-index:3;font-family:"Anton";line-height:.9;
+    font-size:58px;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.65);pointer-events:none}
+
+  /* + / x toggle badge (photo corner) */
+  .roster .player-toggle{position:absolute;right:12px;bottom:12px;z-index:4;width:34px;height:34px;border-radius:50%;
+    background:var(--gold);border:2px solid var(--ink);display:grid;place-items:center;
+    transition:transform .35s;box-shadow:0 4px 12px -3px rgba(0,0,0,.6)}
+  .roster .player-toggle::before,.roster .player-toggle::after{content:"";position:absolute;background:var(--ink);border-radius:2px}
+  .roster .player-toggle::before{width:13px;height:2px}
+  .roster .player-toggle::after{width:2px;height:13px;transition:transform .35s}
+  .roster .player.open .player-toggle{transform:rotate(135deg)}
+
+  /* tag + names (padded body under the photo) */
+  .roster .player-tag{display:inline-block;margin:18px 20px 0;font-family:"Oswald";font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .roster .player-body{padding:0 20px 22px}
+  .roster .player-name-jp{font-size:22px;font-weight:900;line-height:1.2;color:#fff;margin-top:6px}
+  .roster .player-name-en{font-family:"Oswald";font-weight:400;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px}
+
+  /* accordion panel */
+  .roster .player-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}
+  .roster .player.open .player-panel{grid-template-rows:1fr}
+  .roster .player-panel-inner{overflow:hidden;min-height:0}
+  .roster .player-panel-inner>*{opacity:0;transform:translateY(6px);transition:opacity .4s ease .08s,transform .4s ease .08s}
+  .roster .player.open .player-panel-inner>*{opacity:1;transform:none}
+  .roster .player-stats{margin:18px 0 0;padding:16px 0 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px 16px;border-top:1px solid var(--line)}
+  .roster .player-stats .full{grid-column:1/-1}
+  .roster .player-stats dt{font-family:"Oswald";font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:500;margin-bottom:4px}
+  .roster .player-stats dd{font-family:"Oswald";font-weight:600;font-size:16px;color:#fff;margin:0}
+  .roster .player-stats dd i{font-style:normal;font-size:11px;color:var(--gray);margin-left:1px}
+  .roster .player-profile{margin-top:16px}
+  .roster .player-profile .ppt{display:block;font-family:"Oswald";font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:6px}
+  .roster .player-profile p{margin:0;font-size:13.5px;line-height:1.8;color:#aab6cd}
+
+  .roster .player.hide{display:none}
+  .roster .roster-note{margin-top:30px;font-size:13px;color:var(--gray);border-left:3px solid var(--gold);padding-left:16px}
+
+  /* scoped scroll reveal (independent of main.js .reveal) */
+  .roster [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rd,0s)}
+  .roster [data-reveal].in{opacity:1;transform:none}
+
+  @media(max-width:900px){.roster .roster-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.roster .roster-grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){
+    .roster [data-reveal]{opacity:1;transform:none;transition:none}
+    .roster .player,.roster .player-no,.roster .player-img,.roster .player-toggle::after,
+    .roster .player-panel,.roster .player-panel-inner>*{transition:none}
+  }
+  .roster.staff{border-top:1px solid var(--line)}
+  .staff .player-stats{grid-template-columns:1fr 1fr}
+  </style>
+
+  <script>
+  (function(){
+    function init(root){
+      var rev=root.querySelectorAll('[data-reveal]');
+      if('IntersectionObserver' in window){
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+        rev.forEach(function(el){io.observe(el);});
+      }else{rev.forEach(function(el){el.classList.add('in');});}
+      root.querySelectorAll('.player-img').forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var card=btn.closest('.player');
+          var open=card.classList.toggle('open');
+          btn.setAttribute('aria-expanded',open?'true':'false');
+        });
+      });
+      var cards=root.querySelectorAll('.player');
+      var emptyEl=root.querySelector('.roster-empty');
+      var state={};
+      root.querySelectorAll('.filter-btns').forEach(function(g){state[g.getAttribute('data-group')]='all';});
+      function apply(){
+        var vis=0;
+        cards.forEach(function(c){
+          var show=true;
+          for(var k in state){ if(state[k]!=='all' && c.getAttribute('data-'+k)!==state[k]){show=false;break;} }
+          c.classList.toggle('hide',!show); if(show)vis++;
+        });
+        if(emptyEl)emptyEl.style.display=vis?'none':'block';
+      }
+      root.querySelectorAll('.filter-btns').forEach(function(group){
+        var key=group.getAttribute('data-group');
+        group.querySelectorAll('.pf').forEach(function(b){
+          b.addEventListener('click',function(){
+            group.querySelectorAll('.pf').forEach(function(x){x.classList.remove('active');});
+            b.classList.add('active');
+            state[key]=b.getAttribute('data-v');
+            apply();
+          });
+        });
+      });
+    }
+    function boot(){document.querySelectorAll('.roster').forEach(init);}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}else{boot();}
+  })();
+  </script>
+</section>
+
+<!-- STAFF -->
+<section id="staff" class="roster staff">
+  <div class="roster-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-tag">STAFF</div>
+      <h2>スタッフ</h2>
+      <p>SGK ASCENDERS のスタッフ。区分で絞り込めます。カードをタップすると詳細が開きます。</p>
+    </div>
+
+    <div class="roster-filters" data-reveal style="--rd:.08s">
+      <div class="filter-row">
+        <span class="filter-label">区分</span>
+        <div class="filter-btns" data-group="cat">
+          <button class="pf active" data-v="all">ALL</button>
+          <button class="pf" data-v="coach">COACH</button>
+          <button class="pf" data-v="medical">MEDICAL</button>
+          <button class="pf" data-v="analysis">ANALYSIS</button>
+          <button class="pf" data-v="manage">MANAGEMENT</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      ▼▼▼ スタッフ情報の編集はここから ▼▼▼
+      ・data-cat … 区分絞り込み（coach / medical / analysis / manage）
+      ・player-no … 通し番号  ・player-silh … 略称（写真にする場合は img に差し替え）
+      ・player-name-jp / -en … 役職、アコーディオン内 = 区分 / 略称 / 担当 / コメント
+      ・aria-controls と panel id（st-番号）は一意に
+    -->
+    <div class="roster-grid" data-reveal style="--rd:.16s">
+
+      <article class="player" data-cat="coach">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-1">
+          <img class="player-photo" loading="lazy" src="images/staff/01.jpg" alt="ヘッドコーチ" onerror="this.style.display='none'">
+          <span class="player-silh">HC</span>
+          <span class="player-no">01</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">COACHING STAFF</div>
+        <div class="player-body">
+          <div class="player-name-jp">ヘッドコーチ</div>
+          <div class="player-name-en">HEAD COACH</div>
+          <div class="player-panel" id="st-1" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>コーチ</dd></div>
+                <div><dt>略称</dt><dd>HC</dd></div>
+                <div class="full"><dt>担当</dt><dd>チーム統括・戦術設計</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="coach">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-2">
+          <img class="player-photo" loading="lazy" src="images/staff/02.jpg" alt="アシスタントコーチ" onerror="this.style.display='none'">
+          <span class="player-silh">AC</span>
+          <span class="player-no">02</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">COACHING STAFF</div>
+        <div class="player-body">
+          <div class="player-name-jp">アシスタントコーチ</div>
+          <div class="player-name-en">ASSISTANT COACH</div>
+          <div class="player-panel" id="st-2" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>コーチ</dd></div>
+                <div><dt>略称</dt><dd>AC</dd></div>
+                <div class="full"><dt>担当</dt><dd>練習設計・選手育成</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="manage">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-3">
+          <img class="player-photo" loading="lazy" src="images/staff/03.jpg" alt="ゼネラルマネージャー" onerror="this.style.display='none'">
+          <span class="player-silh">GM</span>
+          <span class="player-no">03</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">MANAGEMENT</div>
+        <div class="player-body">
+          <div class="player-name-jp">ゼネラルマネージャー</div>
+          <div class="player-name-en">GENERAL MANAGER</div>
+          <div class="player-panel" id="st-3" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>運営</dd></div>
+                <div><dt>略称</dt><dd>GM</dd></div>
+                <div class="full"><dt>担当</dt><dd>チーム編成・運営統括</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="medical">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-4">
+          <img class="player-photo" loading="lazy" src="images/staff/04.jpg" alt="トレーナー" onerror="this.style.display='none'">
+          <span class="player-silh">TR</span>
+          <span class="player-no">04</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">MEDICAL / PHYSICAL</div>
+        <div class="player-body">
+          <div class="player-name-jp">トレーナー</div>
+          <div class="player-name-en">TRAINER</div>
+          <div class="player-panel" id="st-4" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>メディカル</dd></div>
+                <div><dt>略称</dt><dd>TR</dd></div>
+                <div class="full"><dt>担当</dt><dd>コンディショニング・外傷対応</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="medical">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-5">
+          <img class="player-photo" loading="lazy" src="images/staff/05.jpg" alt="S＆Cコーチ" onerror="this.style.display='none'">
+          <span class="player-silh">S&C</span>
+          <span class="player-no">05</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">MEDICAL / PHYSICAL</div>
+        <div class="player-body">
+          <div class="player-name-jp">S＆Cコーチ</div>
+          <div class="player-name-en">STRENGTH & CONDITIONING</div>
+          <div class="player-panel" id="st-5" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>メディカル</dd></div>
+                <div><dt>略称</dt><dd>S&C</dd></div>
+                <div class="full"><dt>担当</dt><dd>フィジカル強化・傷害予防</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="analysis">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-6">
+          <img class="player-photo" loading="lazy" src="images/staff/06.jpg" alt="アナリスト" onerror="this.style.display='none'">
+          <span class="player-silh">AN</span>
+          <span class="player-no">06</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">ANALYSIS</div>
+        <div class="player-body">
+          <div class="player-name-jp">アナリスト</div>
+          <div class="player-name-en">ANALYST</div>
+          <div class="player-panel" id="st-6" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>分析</dd></div>
+                <div><dt>略称</dt><dd>AN</dd></div>
+                <div class="full"><dt>担当</dt><dd>対戦分析・データ活用</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="manage">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-7">
+          <img class="player-photo" loading="lazy" src="images/staff/07.jpg" alt="マネージャー" onerror="this.style.display='none'">
+          <span class="player-silh">MG</span>
+          <span class="player-no">07</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">MANAGEMENT</div>
+        <div class="player-body">
+          <div class="player-name-jp">マネージャー</div>
+          <div class="player-name-en">MANAGER</div>
+          <div class="player-panel" id="st-7" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>運営</dd></div>
+                <div><dt>略称</dt><dd>MG</dd></div>
+                <div class="full"><dt>担当</dt><dd>運営サポート・記録管理</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="medical">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-8">
+          <img class="player-photo" loading="lazy" src="images/staff/08.jpg" alt="栄養士" onerror="this.style.display='none'">
+          <span class="player-silh">NU</span>
+          <span class="player-no">08</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">MEDICAL / PHYSICAL</div>
+        <div class="player-body">
+          <div class="player-name-jp">栄養士</div>
+          <div class="player-name-en">NUTRITIONIST</div>
+          <div class="player-panel" id="st-8" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>メディカル</dd></div>
+                <div><dt>略称</dt><dd>NU</dd></div>
+                <div class="full"><dt>担当</dt><dd>食事・栄養サポート</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-cat="coach">
+        <button class="player-img" type="button" aria-expanded="false" aria-controls="st-9">
+          <img class="player-photo" loading="lazy" src="images/staff/09.jpg" alt="学生コーチ" onerror="this.style.display='none'">
+          <span class="player-silh">SC</span>
+          <span class="player-no">09</span>
+          <span class="player-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="player-tag">COACHING STAFF</div>
+        <div class="player-body">
+          <div class="player-name-jp">学生コーチ</div>
+          <div class="player-name-en">STUDENT COACH</div>
+          <div class="player-panel" id="st-9" role="region">
+            <div class="player-panel-inner">
+              <dl class="player-stats">
+                <div><dt>区分</dt><dd>コーチ</dd></div>
+                <div><dt>略称</dt><dd>SC</dd></div>
+                <div class="full"><dt>担当</dt><dd>指導補助・チーム運営</dd></div>
+              </dl>
+              <div class="player-profile">
+                <span class="ppt">COMMENT</span>
+                <p>（コメントを入力してください）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <!-- ▲▲▲ スタッフ情報の編集はここまで ▲▲▲ -->
+
+    <p class="roster-empty">該当するスタッフがいません。</p>
+    <p class="roster-note" data-reveal>※ スタッフ情報は表示サンプルです。担当者名・コメントを実際の情報に差し替えてご利用ください。</p>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="bg-ink">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">ROADMAP</div>
+      <h2>最短で日本一に<em>コミット</em>。</h2>
+      <p>成長ロードマップ。一歩ずつ着実に、頂点へ。</p>
+    </div>
+    <div class="roadmap-track reveal" data-d="1">
+      <div class="road-line"></div>
+      <div class="milestones">
+        <div class="ms"><div class="node"><span class="yr">1</span></div><h4>東海1部昇格</h4><span>STEP 1</span></div>
+        <div class="ms"><div class="node"><span class="yr">2</span></div><h4>インカレ出場</h4><span>STEP 2</span></div>
+        <div class="ms"><div class="node"><span class="yr">3</span></div><h4>インカレ BEST 8</h4><span>STEP 3</span></div>
+        <div class="ms"><div class="node"><span class="yr">4</span></div><h4>インカレ BEST 4</h4><span>STEP 4</span></div>
+        <div class="ms peak"><div class="node"><span class="yr">5</span></div><h4>インカレ優勝</h4><span>STEP 5</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YEARLY PLAN -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">YEAR BY YEAR</div>
+      <h2>1年ごとの<em>成長設計</em>。</h2>
+      <p>現体制から新体制へ。各年度に明確なテーマとアクションを設定します。</p>
+    </div>
+    <div class="tabs reveal" data-d="1">
+      <button class="tab active" data-p="0">1年目 2026</button>
+      <button class="tab" data-p="1">2年目 2027</button>
+      <button class="tab" data-p="2">3年目 2028</button>
+      <button class="tab" data-p="3">4年目 2029</button>
+      <button class="tab" data-p="4">5年目 2030</button>
+    </div>
+    <div class="reveal" data-d="2">
+      <div class="panel active">
+        <div class="panel-head"><span class="pyear">2026</span><h3>現体制から新体制へ｜東海リーグ2部優勝・1部昇格</h3></div>
+        <p class="panel-lead">既存メンバーでチームを運営・強化する、土台づくりの1年。</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="ic">01</div><h5>自主運営の組織化</h5><p>週4日活動を通じ、組織のあり方と目標を明確化。</p></div>
+          <div class="feat"><div class="ic">02</div><h5>至学館メソッド導入</h5><p>独自の強化プログラムを実践し、戦術を浸透させる。</p></div>
+          <div class="feat"><div class="ic">03</div><h5>フィジカル＆マインド強化</h5><p>心技体の総合的なレベルアップを実施。</p></div>
+          <div class="feat"><div class="ic">04</div><h5>外部支援体制の構築</h5><p>スポンサー獲得、OB会設立による基盤強化。</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><span class="pyear">2027</span><h3>挑戦の1年｜インカレ初出場</h3></div>
+        <p class="panel-lead">初代リクルートメンバーが入学。チームの軸に据える。週4日練習から週6日練習へシフト。</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="ic">01</div><h5>戦略脳を鍛える</h5><p>勝てる勝負を相手との関係性から選んで勝ち切る。</p></div>
+          <div class="feat"><div class="ic">02</div><h5>フィジカル最強を目指す</h5><p>Strength Coach 指導のもと、週3日ウエイトを実施。</p></div>
+          <div class="feat"><div class="ic">03</div><h5>スポンサー・サプライヤー獲得</h5><p>活動資金の充実を目指す。</p></div>
+          <div class="feat"><div class="ic">04</div><h5>SHIFT TO THE NEXT LEVEL</h5><p>本気で日本一へ。週6日練習体制へ移行。</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><span class="pyear">2028</span><h3>成長の1年｜インカレ BEST 8</h3></div>
+        <p class="panel-lead">第2期リクルートメンバーが入学。サイズアップを目指す。</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="ic">01</div><h5>競争あるチーム</h5><p>Top Team と Second Team に分け、競争のある環境に。</p></div>
+          <div class="feat"><div class="ic">02</div><h5>主体的なスキル発揮</h5><p>引き出し（カード）を身につけ、主体的にプレーを選択。</p></div>
+          <div class="feat"><div class="ic">03</div><h5>フィジカル強化</h5><p>週3日ウエイトは継続＋Circuit を週2日実施。</p></div>
+          <div class="feat"><div class="ic">04</div><h5>対外活動の拡大</h5><p>関東遠征・実業団との試合、スポンサー獲得を拡大。</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><span class="pyear">2029</span><h3>上昇の1年｜インカレ BEST 4</h3></div>
+        <p class="panel-lead">第3期リクルートメンバーが入学。関東と同等のメンバー構成へ。</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="ic">01</div><h5>地域連携と環境の充実</h5><p>大府市とも連携し、体育館や練習環境を整備。</p></div>
+          <div class="feat"><div class="ic">02</div><h5>上位カテゴリーとの対戦</h5><p>Bリーグの相手に対しても対等以上に戦える実力。</p></div>
+          <div class="feat"><div class="ic">03</div><h5>関東基準のフィジカル</h5><p>数値・見た目・実践で、関東の強豪と同等以上に。</p></div>
+          <div class="feat"><div class="ic">04</div><h5>スポンサー獲得・海外遠征</h5><p>支援体制を強化し、海外での経験を積む。</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><span class="pyear">2030</span><h3>日本一へ｜VISION：インカレ優勝</h3></div>
+        <p class="panel-lead">第4期生入学で全学年が結集。最強の布陣で挑む。</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="ic">01</div><h5>B1レベルとの実戦</h5><p>プロチームとの練習試合を定常化し、基準を引き上げる。</p></div>
+          <div class="feat"><div class="ic">02</div><h5>世界基準の強化遠征</h5><p>海外遠征・合宿を実施。国内以上の強度を経験する。</p></div>
+          <div class="feat"><div class="ic">03</div><h5>強固な活動資金基盤</h5><p>スポンサー・OB・大学から1000万円以上の支援を獲得。</p></div>
+          <div class="feat"><div class="ic">04</div><h5>求心力のあるチームへ</h5><p>地域、国内外から人材とファンが集まる魅力的な存在に。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="brand-mark">SGK</div>
+      <p>SGK ASCENDERS｜至学館大学 男子バスケットボール部。挑戦×成長×上昇。5年で日本一を目指す大学バスケットボールプロジェクト。</p>
+    </div>
+    <div class="foot-nav">
+      <div class="foot-col">
+        <h5>MENU</h5>
+        <a href="index.html">TOP / About</a>
+        <a href="team.html">TEAM</a>
+        <a href="news.html">NEWS</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="foot-col">
+        <h5>TEAM</h5>
+        <a href="team.html#roster">選手一覧</a>
+        <a href="team.html#staff">スタッフ</a>
+        <a href="team.html#roadmap">ロードマップ</a>
+        <a href="team.html#plan">年度計画</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 SGK ASCENDERS / Shigakkan University Men's Basketball Club</span>
+    <div class="socials">
+      <a href="#" aria-label="X">X</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+<script>
+// header scroll state (only when a transparent hero exists)
+const header=document.getElementById('header');
+if(header && !header.classList.contains('solid')){
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));
+}
+
+// burger
+const burger=document.getElementById('burger'),nav=document.getElementById('nav');
+if(burger&&nav){
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');nav.classList.remove('open');}));
+}
+
+// reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// tabs (yearly plan)
+const tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  panels.forEach(p=>p.classList.remove('active'));
+  t.classList.add('active');
+  panels[+t.dataset.p].classList.add('active');
+}));
+
+// news filter
+const filters=document.querySelectorAll('.news-filters .tab');
+const items=document.querySelectorAll('.news-list .news-item');
+filters.forEach(f=>f.addEventListener('click',()=>{
+  filters.forEach(x=>x.classList.remove('active'));
+  f.classList.add('active');
+  const cat=f.dataset.cat;
+  items.forEach(it=>{it.style.display=(cat==='all'||it.dataset.cat===cat)?'grid':'none';});
+}));
+
+// demo form
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type=submit]');
+  btn.textContent='送信しました ✓';btn.style.opacity=.7;
+  setTimeout(()=>{btn.textContent='送信する →';btn.style.opacity=1;e.target.reset();},2500);
+  return false;
+}
+</script>
+</body>
+</html>

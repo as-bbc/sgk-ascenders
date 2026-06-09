@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGK ASCENDERS｜至学館大学 男子バスケットボール部</title>
+<meta name="description" content="至学館大学男子バスケットボール部 SGK ASCENDERS 公式サイト。挑戦×成長×上昇。5年で日本一を目指す大学バスケットボールプロジェクト。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0a1730;
+  --navy-800:#0f2347;
+  --navy-700:#163057;
+  --navy-600:#1d3d6e;
+  --gold:#c9a23f;
+  --gold-light:#e3c468;
+  --gold-deep:#a8842b;
+  --ink:#0a1024;
+  --paper:#f5f6f9;
+  --white:#ffffff;
+  --gray:#9aa6bd;
+  --line:rgba(201,162,63,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  background:var(--navy-900);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.grain{
+  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,64px);
+  transition:background .4s ease,padding .4s ease,box-shadow .4s ease;
+}
+header.scrolled,header.solid{
+  background:rgba(10,23,48,.92);
+  backdrop-filter:blur(12px);
+  padding:12px clamp(20px,5vw,64px);
+  box-shadow:0 1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:46px;height:46px;border:2px solid var(--gold);border-radius:8px;
+  display:grid;place-items:center;font-family:"Anton";font-size:18px;
+  color:var(--gold);letter-spacing:1px;background:rgba(201,162,63,.06);
+}
+.brand-text b{font-family:"Oswald";font-weight:600;letter-spacing:3px;font-size:16px;display:block;line-height:1}
+.brand-text span{font-size:10px;color:var(--gray);letter-spacing:2px}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:13px;letter-spacing:1px;color:#c5cee0;position:relative;padding:4px 0;transition:color .25s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+nav a:hover{color:var(--white)}
+nav a:hover::after,nav a.current::after{width:100%}
+nav a.current{color:var(--gold)}
+.nav-cta{
+  border:1px solid var(--gold);color:var(--gold);padding:9px 20px;border-radius:30px;
+  font-size:12px;letter-spacing:1px;transition:all .3s;
+}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+.nav-cta::after{display:none}
+.nav-cta.current{background:var(--gold);color:var(--ink)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger span{width:26px;height:2px;background:var(--white);transition:.3s}
+
+/* ---------- hero (Top) ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px clamp(20px,6vw,90px) 80px;overflow:hidden;z-index:2;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(120% 90% at 80% 10%,rgba(29,61,110,.7),transparent 60%),
+    radial-gradient(80% 80% at 10% 90%,rgba(201,162,63,.12),transparent 55%),
+    linear-gradient(160deg,var(--navy-900),var(--ink));
+}
+.hero-court{position:absolute;inset:0;z-index:-1;opacity:.16;
+  background-image:
+    linear-gradient(var(--gold) 1px,transparent 1px),
+    linear-gradient(90deg,var(--gold) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(120% 100% at 70% 30%,#000 30%,transparent 75%);
+  mask-image:radial-gradient(120% 100% at 70% 30%,#000 30%,transparent 75%);
+}
+.hero-arc{position:absolute;right:-12%;top:50%;transform:translateY(-50%);
+  width:min(70vw,820px);aspect-ratio:1;border:2px solid var(--line);border-radius:50%;z-index:-1;
+  animation:spin 60s linear infinite;}
+.hero-arc::before{content:"";position:absolute;inset:9%;border:1px solid rgba(201,162,63,.18);border-radius:50%}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
+.hero-inner{max-width:980px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Oswald";letter-spacing:4px;
+  font-size:13px;color:var(--gold);margin-bottom:26px;opacity:0;transform:translateY(20px);
+  animation:rise .9s .2s forwards;}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
+.hero h1{font-family:"Anton";font-weight:400;line-height:.92;letter-spacing:1px;
+  font-size:clamp(56px,11vw,150px);margin-bottom:8px;
+  background:linear-gradient(180deg,#fff 40%,#bcc8e0);-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;transform:translateY(30px);animation:rise 1s .35s forwards;}
+.hero h1 .gold{background:linear-gradient(180deg,var(--gold-light),var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(20px,3.2vw,34px);font-weight:900;letter-spacing:2px;margin-bottom:22px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .5s forwards;}
+.hero-tag{display:flex;gap:14px;flex-wrap:wrap;font-family:"Oswald";font-size:clamp(15px,2.4vw,22px);
+  letter-spacing:3px;color:var(--gold-light);margin-bottom:36px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .62s forwards;}
+.hero-tag span{position:relative}
+.hero-tag span:not(:last-child)::after{content:"×";margin-left:14px;color:var(--gray)}
+.hero-lead{max-width:560px;color:#c8d2e6;font-size:16px;margin-bottom:42px;
+  opacity:0;transform:translateY(30px);animation:rise 1s .74s forwards;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(30px);animation:rise 1s .86s forwards;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:40px;
+  font-weight:700;letter-spacing:1px;font-size:14px;transition:all .3s;cursor:pointer;border:none;}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));color:var(--ink);
+  box-shadow:0 10px 30px -8px rgba(201,162,63,.5)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 40px -8px rgba(201,162,63,.6)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  font-family:"Oswald";font-size:11px;letter-spacing:3px;color:var(--gray);text-align:center;
+  opacity:0;animation:rise 1s 1.2s forwards;}
+.scroll-hint .line{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);margin:10px auto 0;position:relative;overflow:hidden}
+.scroll-hint .line::after{content:"";position:absolute;top:-46px;left:0;width:1px;height:46px;background:var(--gold);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%{top:-46px}60%,100%{top:46px}}
+
+/* ---------- page hero (sub pages) ---------- */
+.page-hero{position:relative;padding:150px clamp(20px,6vw,90px) 70px;overflow:hidden;z-index:2;
+  background:linear-gradient(160deg,var(--navy-800),var(--ink))}
+.page-hero .hero-court{opacity:.12}
+.page-hero-inner{max-width:1180px;margin:0 auto;position:relative}
+.page-hero .eyebrow{animation:none;opacity:1;transform:none}
+.page-hero h1{font-family:"Anton";font-weight:400;font-size:clamp(44px,9vw,96px);line-height:1;letter-spacing:1px;
+  background:linear-gradient(180deg,#fff 45%,#bcc8e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero .jp{font-size:clamp(16px,2.6vw,22px);font-weight:900;margin-top:10px}
+.breadcrumb{font-family:"Oswald";font-size:12px;letter-spacing:1px;color:var(--gray);margin-top:22px}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ---------- sections ---------- */
+section{position:relative;z-index:2}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(80px,12vw,150px) clamp(20px,5vw,40px)}
+.wrap.tight{padding-top:clamp(60px,8vw,90px)}
+.sec-head{margin-bottom:60px;max-width:760px}
+.sec-tag{font-family:"Oswald";letter-spacing:4px;font-size:13px;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-tag::before{content:"";width:34px;height:1px;background:var(--gold)}
+.sec-head h2{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.2;letter-spacing:1px}
+.sec-head h2 em{font-style:normal;color:var(--gold)}
+.sec-head p{color:#aab6cd;margin-top:18px;font-size:16px}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}
+.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}
+
+/* concept */
+.alt-navy{background:linear-gradient(180deg,var(--navy-900),var(--navy-800))}
+.concept{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.concept-meaning{display:flex;gap:18px;margin:30px 0;flex-wrap:wrap}
+.meaning-chip{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:rgba(255,255,255,.02);flex:1;min-width:140px}
+.meaning-chip b{font-family:"Oswald";font-size:13px;letter-spacing:2px;color:var(--gold);display:block;margin-bottom:6px}
+.meaning-chip span{font-size:15px;font-weight:700}
+.concept p{color:#bcc6da;font-size:16px}
+.concept-card{position:relative;border:1px solid var(--line);border-radius:20px;padding:46px 40px;
+  background:linear-gradient(150deg,rgba(29,61,110,.5),rgba(10,23,48,.4));overflow:hidden}
+.concept-card::before{content:"↗";position:absolute;right:-10px;top:-30px;font-size:200px;color:rgba(201,162,63,.07);font-family:"Anton"}
+.concept-card h3{font-family:"Anton";font-size:clamp(34px,5vw,56px);line-height:1;color:var(--gold-light);margin-bottom:8px}
+.concept-card .jp{font-size:14px;color:var(--gray);letter-spacing:4px;margin-bottom:24px}
+.concept-card .big{font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.5}
+
+/* coach */
+.coach{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.coach-portrait{position:relative;border:1px solid var(--line);border-radius:20px;aspect-ratio:3/4;overflow:hidden;
+  background:linear-gradient(160deg,var(--navy-600),var(--ink));display:grid;place-items:center}
+.coach-portrait .silhouette{font-family:"Anton";font-size:clamp(70px,13vw,150px);color:rgba(201,162,63,.18);letter-spacing:2px}
+.coach-portrait .badge{position:absolute;left:20px;bottom:20px;right:20px;
+  background:rgba(10,16,36,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.coach-portrait .badge b{display:block;font-size:20px;font-weight:900}
+.coach-portrait .badge span{font-family:"Oswald";font-size:12px;letter-spacing:2px;color:var(--gold)}
+.coach h3{font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:4px}
+.coach .role{font-family:"Oswald";letter-spacing:3px;color:var(--gold);font-size:14px;margin-bottom:26px}
+.highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:34px}
+.hl{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02);font-size:14px;font-weight:700;display:flex;gap:10px;align-items:flex-start}
+.hl .dot{color:var(--gold);font-size:18px;line-height:1.2}
+.career h4{font-family:"Oswald";letter-spacing:2px;font-size:13px;color:var(--gold);margin-bottom:16px}
+.career ul{list-style:none;display:grid;gap:10px}
+.career li{font-size:14px;color:#c2cce0;padding-left:22px;position:relative}
+.career li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border:1px solid var(--gold);border-radius:50%}
+.quote{margin-top:30px;font-size:clamp(17px,2.5vw,22px);font-weight:900;line-height:1.5;color:var(--gold-light)}
+
+/* roadmap */
+.bg-ink{background:var(--ink);overflow:hidden}
+.roadmap-track{position:relative;margin-top:50px}
+.road-line{position:absolute;left:0;right:0;top:78px;height:2px;background:linear-gradient(90deg,rgba(201,162,63,.2),var(--gold),rgba(201,162,63,.2))}
+.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}
+.ms{text-align:center;position:relative;padding-top:30px}
+.ms .node{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;position:relative;
+  border:2px solid var(--line);background:radial-gradient(circle at 30% 25%,var(--navy-600),var(--ink));transition:transform .4s,border-color .4s,box-shadow .4s}
+.ms .node .yr{font-family:"Anton";font-size:22px;color:var(--gold-light)}
+.ms:hover .node{transform:translateY(-8px) scale(1.06);border-color:var(--gold);box-shadow:0 14px 40px -10px rgba(201,162,63,.5)}
+.ms.peak .node{border-color:var(--gold);background:radial-gradient(circle at 30% 25%,var(--gold),var(--gold-deep));box-shadow:0 0 50px -6px rgba(201,162,63,.65)}
+.ms.peak .node .yr{color:var(--ink)}
+.ms h4{font-size:15px;font-weight:900;margin-bottom:4px}
+.ms span{font-family:"Oswald";font-size:12px;letter-spacing:1px;color:var(--gray)}
+.ms.peak h4{color:var(--gold-light)}
+
+/* yearly plans */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.tab{font-family:"Oswald";letter-spacing:1px;font-size:13px;padding:12px 22px;border-radius:30px;
+  border:1px solid var(--line);background:transparent;color:#c2cce0;cursor:pointer;transition:all .3s}
+.tab.active{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+.panel{display:none;animation:fade .5s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+.panel-head .pyear{font-family:"Anton";font-size:clamp(40px,7vw,76px);color:var(--gold-light);line-height:1}
+.panel-head h3{font-size:clamp(22px,3.5vw,32px);font-weight:900}
+.panel-lead{color:#aab6cd;font-size:16px;margin-bottom:34px;max-width:680px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.feat{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.02);transition:transform .3s,background .3s}
+.feat:hover{transform:translateY(-6px);background:rgba(29,61,110,.3)}
+.feat .ic{font-family:"Anton";font-size:28px;color:var(--gold);margin-bottom:14px}
+.feat h5{font-size:17px;font-weight:900;margin-bottom:8px}
+.feat p{font-size:14px;color:#aab6cd}
+
+/* university */
+.bg-paper{background:var(--paper);color:var(--ink)}
+.bg-paper .sec-tag{color:var(--gold-deep)}
+.bg-paper .sec-tag::before{background:var(--gold-deep)}
+.bg-paper .sec-head h2 em{color:var(--gold-deep)}
+.bg-paper .sec-head p{color:#5a6275}
+.univ-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.univ-facts{display:grid;gap:0;border-top:1px solid #dfe3ec}
+.fact{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #dfe3ec;font-size:15px}
+.fact b{font-family:"Oswald";letter-spacing:1px;font-size:13px;color:var(--gold-deep)}
+.univ-cols{display:grid;gap:22px}
+.ucard{border:1px solid #e2e6ef;border-radius:16px;padding:24px;background:#fff;box-shadow:0 6px 24px -16px rgba(10,16,36,.4)}
+.ucard h4{font-size:15px;font-weight:900;color:var(--navy-700);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.ucard h4::before{content:"";width:6px;height:18px;background:var(--gold-deep);border-radius:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12.5px;background:#eef1f7;color:#3a445c;padding:6px 13px;border-radius:20px;font-weight:500}
+
+/* support */
+.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:46px}
+.sup-box{border:1px solid var(--line);border-radius:18px;padding:36px;background:rgba(255,255,255,.02)}
+.sup-box h3{font-size:20px;font-weight:900;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.sup-box h3 .num{font-family:"Anton";color:var(--gold);font-size:24px}
+.sup-list{display:grid;gap:12px}
+.sup-list div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#c8d2e6}
+.sup-list .ck{color:var(--gold);font-weight:900}
+.pipeline{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.pipe{flex:1;min-width:130px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:22px 14px;background:linear-gradient(160deg,rgba(29,61,110,.4),rgba(10,23,48,.3));font-size:14px;font-weight:700;position:relative}
+.pipe .pic{font-size:24px;margin-bottom:8px;color:var(--gold)}
+
+/* news teaser (top) */
+.news-teaser{display:grid;gap:0;border-top:1px solid var(--line)}
+.nt-row{display:grid;grid-template-columns:130px 120px 1fr auto;gap:20px;align-items:center;
+  padding:22px 6px;border-bottom:1px solid var(--line);transition:background .25s}
+.nt-row:hover{background:rgba(255,255,255,.03)}
+.nt-row time{font-family:"Oswald";letter-spacing:1px;color:var(--gray);font-size:14px}
+.nt-cat{font-size:11px;letter-spacing:1px;border:1px solid var(--line);color:var(--gold);border-radius:20px;padding:4px 12px;text-align:center;justify-self:start}
+.nt-row p{font-size:15px;font-weight:500}
+.nt-row .arr{color:var(--gold);font-family:"Oswald"}
+
+/* news page list */
+.news-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.news-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:140px 130px 1fr;gap:24px;align-items:start;
+  padding:28px 6px;border-bottom:1px solid var(--line);transition:background .25s;cursor:pointer}
+.news-item:hover{background:rgba(255,255,255,.03)}
+.news-item time{font-family:"Oswald";letter-spacing:1px;color:var(--gray);font-size:15px;padding-top:2px}
+.news-item .nt-cat{align-self:start}
+.news-item h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.news-item p{font-size:14px;color:#aab6cd}
+.news-empty{margin-top:30px;color:var(--gray);font-size:14px;border-left:3px solid var(--gold);padding-left:16px}
+
+/* message / cta */
+.message{position:relative;overflow:hidden;text-align:center;background:linear-gradient(160deg,var(--navy-800),var(--ink))}
+.message .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(60% 60% at 50% 40%,rgba(201,162,63,.18),transparent 70%)}
+.msg-inner{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.msg-eyebrow{font-family:"Oswald";letter-spacing:5px;color:var(--gold);font-size:14px;margin-bottom:24px}
+.msg-logo{font-family:"Anton";font-size:clamp(40px,9vw,110px);line-height:.95;letter-spacing:2px;
+  background:linear-gradient(180deg,#fff,#aebbd6);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px}
+.msg-tag{font-family:"Oswald";font-size:clamp(18px,3.4vw,30px);letter-spacing:3px;color:var(--gold-light);margin-bottom:30px}
+.msg-tag span:not(:last-child)::after{content:"×";margin:0 12px;color:var(--gray)}
+.msg-big{font-size:clamp(28px,6vw,58px);font-weight:900;line-height:1.25;margin-bottom:44px}
+.msg-big em{font-style:normal;color:var(--gold-light)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.contact-info p{color:#aab6cd;margin-bottom:26px}
+.ci{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.ci .ic{width:42px;height:42px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--gold);flex-shrink:0;font-size:18px}
+.ci b{display:block;font-family:"Oswald";letter-spacing:1px;font-size:12px;color:var(--gold);margin-bottom:2px}
+.ci span{font-size:15px}
+form{display:grid;gap:18px}
+.field{display:grid;gap:8px}
+.field label{font-size:13px;letter-spacing:1px;color:#c2cce0}
+.field input,.field textarea,.field select{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;
+  padding:14px 16px;color:#fff;font-family:inherit;font-size:15px;transition:border .3s,background .3s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.06)}
+.field select option{background:var(--navy-800)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-note{font-size:12px;color:var(--gray)}
+
+/* footer */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp(20px,5vw,40px) 40px}
+.foot-top{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(201,162,63,.15)}
+.foot-brand .brand-mark{margin-bottom:16px}
+.foot-brand p{color:var(--gray);font-size:14px;max-width:300px}
+.foot-nav{display:flex;gap:60px;flex-wrap:wrap}
+.foot-col h5{font-family:"Oswald";letter-spacing:2px;font-size:12px;color:var(--gold);margin-bottom:16px}
+.foot-col a{display:block;font-size:14px;color:#aab6cd;margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:1180px;margin:30px auto 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--gray)}
+.socials{display:flex;gap:14px}
+.socials a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#c2cce0;transition:all .3s;font-size:13px;font-family:"Oswald"}
+.socials a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* mobile */
+@media(max-width:900px){
+  nav{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--navy-800);
+    flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:transform .4s;box-shadow:-20px 0 60px rgba(0,0,0,.5);z-index:99}
+  nav.open{transform:none}
+  .burger{display:flex;z-index:101}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .concept,.coach,.univ-grid,.contact-grid,.support-grid{grid-template-columns:1fr;gap:36px}
+  .highlight-grid{grid-template-columns:1fr}
+  .milestones{grid-template-columns:repeat(2,1fr);gap:30px}
+  .road-line{display:none}
+  .ms.peak{grid-column:span 2}
+  .two{grid-template-columns:1fr}
+  .coach-portrait{aspect-ratio:4/3}
+  .nt-row{grid-template-columns:1fr;gap:6px;align-items:start}
+  .nt-row .arr{display:none}
+  .news-item{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:520px){
+  .hero-tag{font-size:14px}
+  .milestones{grid-template-columns:1fr}
+  .ms.peak{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header id="header">
+  <a href="index.html" class="brand">
+    <div class="brand-mark">SGK</div>
+    <div class="brand-text"><b>ASCENDERS</b><span>SHIGAKKAN UNIVERSITY</span></div>
+  </a>
+  <nav id="nav">
+    <a href="index.html" class="current">TOP</a>
+    <a href="team.html">TEAM</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-court"></div>
+  <div class="hero-arc"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">SGK ASCENDERS — 2026 PROJECT START</div>
+    <h1>SGK<br><span class="gold">ASCENDERS</span></h1>
+    <div class="hero-sub">至学館大学 男子バスケットボール部</div>
+    <div class="hero-tag"><span>挑戦</span><span>成長</span><span>上昇</span></div>
+    <p class="hero-lead">挑戦と成長を繰り返し、上昇し続ける集団。<br>地元・愛知から、5年で日本一を目指す大学バスケットボールプロジェクト。</p>
+    <div class="hero-btns">
+      <a href="team.html" class="btn btn-gold">チームを見る →</a>
+      <a href="contact.html" class="btn btn-ghost">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL<div class="line"></div></div>
+</section>
+
+<section id="about" class="alt-navy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">ABOUT THE TEAM</div>
+      <h2>チーム名は<em>ASCENDERS</em>。<br>上昇する人たち。</h2>
+      <p>地元愛知から、大学バスケで日本一へ。SGK ASCENDERS は、至学館大学男子バスケットボール部の新たな挑戦のかたちです。</p>
+    </div>
+    <div class="concept">
+      <div class="reveal" data-d="1">
+        <p>ASCENDERS（アセンダーズ）とは「上昇する人たち」。挑戦と成長を繰り返し、止まることなく上昇し続ける集団であり続けます。</p>
+        <div class="concept-meaning">
+          <div class="meaning-chip"><b>ASCEND</b><span>上昇する</span></div>
+          <div class="meaning-chip"><b>-ER</b><span>人</span></div>
+          <div class="meaning-chip"><b>-S</b><span>たち</span></div>
+        </div>
+        <p>大学も本気で挑む、日本一、そして世界への挑戦が始まります。理事長に「5年で日本一」を宣言し、新体制でスタートします。</p>
+      </div>
+      <div class="concept-card reveal" data-d="2">
+        <h3>5 YEARS<br>TO #1</h3>
+        <div class="jp">5年で日本一を目指す</div>
+        <div class="big">挑戦と成長を繰り返し、<br>上昇し続ける集団。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news-teaser">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">LATEST NEWS</div>
+      <h2>最新<em>ニュース</em>。</h2>
+    </div>
+    <div class="news-teaser reveal" data-d="1">
+      <a href="news.html" class="nt-row"><time>2026.04.01</time><span class="nt-cat">TEAM</span><p>SGK ASCENDERS として新体制が始動しました。</p><span class="arr">→</span></a>
+      <a href="news.html" class="nt-row"><time>2026.03.20</time><span class="nt-cat">STAFF</span><p>伊藤彰浩ヘッドコーチが就任しました。</p><span class="arr">→</span></a>
+      <a href="news.html" class="nt-row"><time>2026.03.01</time><span class="nt-cat">INFO</span><p>公式サイトを公開しました。</p><span class="arr">→</span></a>
+    </div>
+    <div style="margin-top:34px" class="reveal" data-d="2">
+      <a href="news.html" class="btn btn-ghost">ニュース一覧へ →</a>
+    </div>
+  </div>
+</section>
+
+<section class="message">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="msg-inner reveal">
+      <div class="msg-eyebrow">MESSAGE</div>
+      <div class="msg-logo">SGK ASCENDERS</div>
+      <div class="msg-tag"><span>挑戦</span><span>成長</span><span>上昇</span></div>
+      <div class="msg-big">一緒に、<em>日本一</em>を<br>目指しましょう。</div>
+      <a href="contact.html" class="btn btn-gold">チームに加わる・問い合わせる →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="brand-mark">SGK</div>
+      <p>SGK ASCENDERS｜至学館大学 男子バスケットボール部。挑戦×成長×上昇。5年で日本一を目指す大学バスケットボールプロジェクト。</p>
+    </div>
+    <div class="foot-nav">
+      <div class="foot-col">
+        <h5>MENU</h5>
+        <a href="index.html">TOP / About</a>
+        <a href="team.html">TEAM</a>
+        <a href="news.html">NEWS</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="foot-col">
+        <h5>TEAM</h5>
+        <a href="team.html#coach">ヘッドコーチ</a>
+        <a href="team.html#roadmap">ロードマップ</a>
+        <a href="team.html#plan">年度計画</a>
+        <a href="team.html#support">サポート体制</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 SGK ASCENDERS / Shigakkan University Men's Basketball Club</span>
+    <div class="socials">
+      <a href="#" aria-label="X">X</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+<script>
+// header scroll state (only when a transparent hero exists)
+const header=document.getElementById('header');
+if(header && !header.classList.contains('solid')){
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));
+}
+
+// burger
+const burger=document.getElementById('burger'),nav=document.getElementById('nav');
+if(burger&&nav){
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');nav.classList.remove('open');}));
+}
+
+// reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// tabs (yearly plan)
+const tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  panels.forEach(p=>p.classList.remove('active'));
+  t.classList.add('active');
+  panels[+t.dataset.p].classList.add('active');
+}));
+
+// news filter
+const filters=document.querySelectorAll('.news-filters .tab');
+const items=document.querySelectorAll('.news-list .news-item');
+filters.forEach(f=>f.addEventListener('click',()=>{
+  filters.forEach(x=>x.classList.remove('active'));
+  f.classList.add('active');
+  const cat=f.dataset.cat;
+  items.forEach(it=>{it.style.display=(cat==='all'||it.dataset.cat===cat)?'grid':'none';});
+}));
+
+// demo form
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type=submit]');
+  btn.textContent='送信しました ✓';btn.style.opacity=.7;
+  setTimeout(()=>{btn.textContent='送信する →';btn.style.opacity=1;e.target.reset();},2500);
+  return false;
+}
+</script>
+</body>
+</html>
