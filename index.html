@@ -456,10 +456,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
       <div class="sec-tag">LATEST NEWS</div>
       <h2>最新<em>ニュース</em>。</h2>
     </div>
-    <div class="news-teaser reveal" data-d="1">
-      <a href="news.html" class="nt-row"><time>2026.04.01</time><span class="nt-cat">TEAM</span><p>SGK ASCENDERS として新体制が始動しました。</p><span class="arr">→</span></a>
-      <a href="news.html" class="nt-row"><time>2026.03.20</time><span class="nt-cat">STAFF</span><p>伊藤彰浩ヘッドコーチが就任しました。</p><span class="arr">→</span></a>
-      <a href="news.html" class="nt-row"><time>2026.03.01</time><span class="nt-cat">INFO</span><p>公式サイトを公開しました。</p><span class="arr">→</span></a>
+    <div class="news-teaser reveal" data-d="1" id="newsTeaser">
+      <!-- news-data.js の NEWS_DATA（news.htmlと共通）からJSで自動生成されます -->
     </div>
     <div style="margin-top:34px" class="reveal" data-d="2">
       <a href="news.html" class="btn btn-ghost">ニュース一覧へ →</a>
@@ -562,6 +560,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
     </div>
   </div>
 </footer>
+<script src="news-data.js"></script>
 <script>
 // header scroll state (only when a transparent hero exists)
 const header=document.getElementById('header');
@@ -574,6 +573,21 @@ const burger=document.getElementById('burger'),nav=document.getElementById('nav'
 if(burger&&nav){
   burger.addEventListener('click',()=>{burger.classList.toggle('open');nav.classList.toggle('open');});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');nav.classList.remove('open');}));
+}
+
+// latest news teaser: render from shared NEWS_DATA (news-data.js)
+// news.html と同じデータソースを参照しているため、
+// news-data.js を更新するだけでトップページにも反映されます。
+const newsTeaserEl=document.getElementById('newsTeaser');
+if(newsTeaserEl && typeof NEWS_DATA!=='undefined'){
+  newsTeaserEl.innerHTML=NEWS_DATA.slice(0,3).map(n=>`
+    <a href="news.html#${n.id}" class="nt-row">
+      <time>${n.date}</time>
+      <span class="nt-cat">${n.catLabel}</span>
+      <p>${n.title}</p>
+      <span class="arr">→</span>
+    </a>
+  `).join('');
 }
 
 // reveal on scroll

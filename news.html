@@ -280,8 +280,10 @@ section{position:relative;z-index:2}
 .news-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
 .news-list{display:grid;gap:0;border-top:1px solid var(--line)}
 .news-item{display:grid;grid-template-columns:140px 130px 1fr;gap:24px;align-items:start;
-  padding:28px 6px;border-bottom:1px solid var(--line);transition:background .25s;cursor:pointer}
+  padding:28px 6px;border-bottom:1px solid var(--line);transition:background .25s,box-shadow .25s;cursor:pointer;
+  scroll-margin-top:110px}
 .news-item:hover{background:rgba(255,255,255,.03)}
+.news-item:target{box-shadow:inset 3px 0 0 var(--gold);background:rgba(201,162,63,.08)}
 .news-item time{font-family:"Oswald";letter-spacing:1px;color:var(--gray);font-size:15px;padding-top:2px}
 .news-item .nt-cat{align-self:start}
 .news-item h3{font-size:17px;font-weight:700;margin-bottom:6px}
@@ -477,39 +479,10 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
       <button class="tab" data-cat="info">INFO</button>
     </div>
 
-    <div class="news-list reveal" data-d="1">
-      <div class="news-item" data-cat="info">
-        <time>2026.08.01</time>
-        <span class="nt-cat">INFO</span>
-        <div>
-          <h3>公式サイトを公開しました</h3>
-          <p>SGK ASCENDERS の公式サイトを公開しました。今後、試合情報やチームの活動を発信していきます。</p>
-        </div>
-      </div>
-      <div class="news-item" data-cat="game">
-        <time>2026.06.15</time>
-        <span class="nt-cat">GAME</span>
-        <div>
-          <h3>韓国からの練習生が参加しました</h3>
-          <p>初の海外練習生の受け入れとして1ヶ月間、練習に合流します。</p>
-        </div>
-      </div>
-      <div class="news-item" data-cat="team">
-        <time>2026.04.10</time>
-        <span class="nt-cat">TEAM</span>
-        <div>
-          <h3>2026年度の活動方針を公開しました</h3>
-          <p>東海リーグ2部優勝・1部昇格を目標に、組織化と至学館メソッドの導入を進めます。</p>
-        </div>
-      </div>
-      <div class="news-item" data-cat="staff">
-        <time>2026.04.01</time>
-        <span class="nt-cat">STAFF</span>
-        <div>
-          <h3>伊藤彰浩ヘッドコーチが就任しました</h3>
-        </div>
-      </div>
+    <div class="news-list reveal" data-d="1" id="newsList">
+      <!-- news-data.js の NEWS_DATA からJSで自動生成されます -->
     </div>
+    <p class="news-empty" id="newsEmpty" style="display:none">該当するニュースはありません。</p>
   </div>
 </section>
 
@@ -545,6 +518,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
     </div>
   </div>
 </footer>
+<script src="news-data.js"></script>
 <script>
 // header scroll state (only when a transparent hero exists)
 const header=document.getElementById('header');
@@ -574,14 +548,38 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   panels[+t.dataset.p].classList.add('active');
 }));
 
+// news list: render from shared NEWS_DATA (news-data.js)
+// index.html の最新ニュースと同じデータソースを参照しているため、
+// news-data.js を更新するだけで両ページに反映されます。
+const newsListEl=document.getElementById('newsList');
+if(newsListEl && typeof NEWS_DATA!=='undefined'){
+  newsListEl.innerHTML=NEWS_DATA.map(n=>`
+    <div class="news-item" data-cat="${n.cat}" id="${n.id}">
+      <time>${n.date}</time>
+      <span class="nt-cat">${n.catLabel}</span>
+      <div>
+        <h3>${n.title}</h3>
+        ${n.desc?`<p>${n.desc}</p>`:''}
+      </div>
+    </div>
+  `).join('');
+}
+
 // news filter
 const filters=document.querySelectorAll('.news-filters .tab');
 const items=document.querySelectorAll('.news-list .news-item');
+const newsEmpty=document.getElementById('newsEmpty');
 filters.forEach(f=>f.addEventListener('click',()=>{
   filters.forEach(x=>x.classList.remove('active'));
   f.classList.add('active');
   const cat=f.dataset.cat;
-  items.forEach(it=>{it.style.display=(cat==='all'||it.dataset.cat===cat)?'grid':'none';});
+  let visible=0;
+  items.forEach(it=>{
+    const show=(cat==='all'||it.dataset.cat===cat);
+    it.style.display=show?'grid':'none';
+    if(show)visible++;
+  });
+  if(newsEmpty)newsEmpty.style.display=visible===0?'block':'none';
 }));
 
 // demo form
