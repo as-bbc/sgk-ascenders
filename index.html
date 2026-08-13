@@ -57,9 +57,7 @@ header.scrolled,header.solid{
 }
 .brand{display:flex;align-items:center;gap:14px}
 .brand-mark{
-  width:46px;height:46px;border:2px solid var(--gold);border-radius:8px;
-  display:grid;place-items:center;font-family:"Anton";font-size:18px;
-  color:var(--gold);letter-spacing:1px;background:rgba(201,162,63,.06);
+  width:46px;height:46px;border-radius:50%;object-fit:contain;flex-shrink:0;
 }
 .brand-text b{font-family:"Oswald";font-weight:600;letter-spacing:3px;font-size:16px;display:block;line-height:1}
 .brand-text span{font-size:10px;color:var(--gray);letter-spacing:2px}
@@ -395,13 +393,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
 
 <header id="header">
   <a href="index.html" class="brand">
-    <div class="brand-mark">SGK</div>
+    <img class="brand-mark" src="images/logo.png" alt="SGK ASCENDERS">
     <div class="brand-text"><b>ASCENDERS</b><span>SHIGAKKAN UNIVERSITY</span></div>
   </a>
   <nav id="nav">
     <a href="index.html" class="current">TOP</a>
     <a href="team.html">TEAM</a>
-    <a href="news.html">NEWS</a>
     <a href="contact.html" class="nav-cta">CONTACT</a>
   </nav>
   <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
@@ -531,7 +528,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
 <footer>
   <div class="foot-top">
     <div class="foot-brand">
-      <div class="brand-mark">SGK</div>
+      <img class="brand-mark" src="images/logo.png" alt="SGK ASCENDERS">
       <p>SGK ASCENDERS｜至学館大学 男子バスケットボール部。<br>挑戦×成長×上昇。</p>
     </div>
     <div class="foot-nav">
@@ -539,7 +536,6 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
         <h5>MENU</h5>
         <a href="index.html">TOP / About</a>
         <a href="team.html">TEAM</a>
-        <a href="news.html">NEWS</a>
         <a href="contact.html">CONTACT</a>
       </div>
       <div class="foot-col">
