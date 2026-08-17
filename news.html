@@ -57,9 +57,7 @@ header.scrolled,header.solid{
 }
 .brand{display:flex;align-items:center;gap:14px}
 .brand-mark{
-  width:46px;height:46px;border:2px solid var(--gold);border-radius:8px;
-  display:grid;place-items:center;font-family:"Anton";font-size:18px;
-  color:var(--gold);letter-spacing:1px;background:rgba(201,162,63,.06);
+  width:46px;height:46px;border-radius:50%;object-fit:contain;flex-shrink:0;
 }
 .brand-text b{font-family:"Oswald";font-weight:600;letter-spacing:3px;font-size:16px;display:block;line-height:1}
 .brand-text span{font-size:10px;color:var(--gray);letter-spacing:2px}
@@ -366,7 +364,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
 
 <header id="header" class="solid">
   <a href="index.html" class="brand">
-    <div class="brand-mark">SGK</div>
+    <img class="brand-mark" src="images/logo.png" alt="SGK ASCENDERS">
     <div class="brand-text"><b>ASCENDERS</b><span>SHIGAKKAN UNIVERSITY</span></div>
   </a>
   <nav id="nav">
@@ -393,46 +391,55 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
   <div class="wrap tight">
     <div class="sec-head reveal">
       <div class="sec-tag">MATCH RESULTS</div>
-      <h2>直近の<em>試合結果</em>。</h2>
+      <h2><em>試合結果</em>。</h2>
       <p>最新の公式戦・練習試合の結果をお知らせします。</p>
     </div>
     <!-- ▼▼▼ 試合結果の編集はここから（res は win / lose） ▼▼▼ -->
     <div class="results-list reveal" data-d="1">
-        <div class="result-row win">
-          <div class="r-date"><time>2026.04.20</time><span class="r-comp">東海リーグ2部</span><span class="r-ha">HOME</span></div>
+        <div class="result-row scheduled">
+          <div class="r-date"><time>2026.09.05(土)</time><span class="r-comp">12:15 Toss Up</span><span class="r-ha">＠日本福祉大学 美浜キャンパス</span></div>
           <div class="r-match">
             <div class="r-team home"><span class="r-name">SGK ASCENDERS</span></div>
-            <div class="r-score"><span class="r-pf">78</span><span class="r-dash">-</span><span class="r-pa">65</span></div>
-            <div class="r-team away"><span class="r-name">名古屋桜大学</span></div>
+            <div class="r-score"><span class="r-vs">VS</span></div>
+            <div class="r-team away"><span class="r-name">中部学院大学</span></div>
           </div>
-          <div class="r-result">WIN</div>
+          <div class="r-result">予定</div>
         </div>
-        <div class="result-row win">
-          <div class="r-date"><time>2026.04.13</time><span class="r-comp">東海リーグ2部</span><span class="r-ha">AWAY</span></div>
+        <div class="result-row scheduled">
+          <div class="r-date"><time>2026.09.19(土)</time><span class="r-comp">15:45 Toss Up</span><span class="r-ha">＠このはなアリーナ</span></div>
           <div class="r-match">
             <div class="r-team home"><span class="r-name">SGK ASCENDERS</span></div>
-            <div class="r-score"><span class="r-pf">82</span><span class="r-dash">-</span><span class="r-pa">70</span></div>
-            <div class="r-team away"><span class="r-name">東海工科大学</span></div>
+            <div class="r-score"><span class="r-vs">VS</span></div>
+            <div class="r-team away"><span class="r-name">日本福祉大学</span></div>
           </div>
-          <div class="r-result">WIN</div>
+          <div class="r-result">予定</div>
         </div>
-        <div class="result-row lose">
-          <div class="r-date"><time>2026.04.06</time><span class="r-comp">練習試合</span><span class="r-ha">AWAY</span></div>
+        <div class="result-row scheduled">
+          <div class="r-date"><time>2026.09.20(日)</time><span class="r-comp">15:15 Toss Up</span><span class="r-ha">＠このはなアリーナ</span></div>
           <div class="r-match">
             <div class="r-team home"><span class="r-name">SGK ASCENDERS</span></div>
-            <div class="r-score"><span class="r-pf">68</span><span class="r-dash">-</span><span class="r-pa">74</span></div>
-            <div class="r-team away"><span class="r-name">三河学院大学</span></div>
+            <div class="r-score"><span class="r-vs">VS</span></div>
+            <div class="r-team away"><span class="r-name">愛知各院大学</span></div>
           </div>
-          <div class="r-result">LOSE</div>
+          <div class="r-result">予定</div>
         </div>
-        <div class="result-row win">
-          <div class="r-date"><time>2026.03.30</time><span class="r-comp">東海リーグ2部 開幕</span><span class="r-ha">HOME</span></div>
+        <div class="result-row scheduled">
+          <div class="r-date"><time>2026.09.27(日)</time><span class="r-comp">12:15 Toss Up</span><span class="r-ha">＠南山大学</span></div>
           <div class="r-match">
             <div class="r-team home"><span class="r-name">SGK ASCENDERS</span></div>
-            <div class="r-score"><span class="r-pf">90</span><span class="r-dash">-</span><span class="r-pa">61</span></div>
-            <div class="r-team away"><span class="r-name">愛知青陵大学</span></div>
+            <div class="r-score"><span class="r-vs">VS</span></div>
+            <div class="r-team away"><span class="r-name">南山大学</span></div>
           </div>
-          <div class="r-result">WIN</div>
+          <div class="r-result">予定</div>
+        </div>
+        <div class="result-row scheduled">
+          <div class="r-date"><time>2026.10.03(土)</time><span class="r-comp">10:30 Toss Up</span><span class="r-ha">＠南山大学</span></div>
+          <div class="r-match">
+            <div class="r-team home"><span class="r-name">SGK ASCENDERS</span></div>
+            <div class="r-score"><span class="r-vs">VS</span></div>
+            <div class="r-team away"><span class="r-name">朝日大学</span></div>
+          </div>
+          <div class="r-result">予定</div>
         </div>
     </div>
     <!-- ▲▲▲ 試合結果の編集はここまで ▲▲▲ -->
@@ -455,11 +462,14 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
   #results .r-team.away{text-align:left}
   #results .r-score{flex:0 0 auto;display:flex;align-items:center;gap:10px;font-family:"Anton";font-size:30px;color:#fff;line-height:1}
   #results .r-score .r-dash{color:var(--gray);font-size:20px}
+  #results .r-score .r-vs{font-family:"Oswald";font-size:18px;letter-spacing:2px;color:var(--gold)}
   #results .result-row.win .r-pf{color:var(--gold-light)}
   #results .result-row.lose .r-pa{color:var(--gold-light)}
   #results .r-result{font-family:"Oswald";font-weight:600;letter-spacing:1px;font-size:14px;text-align:center;padding:9px 0;border-radius:8px}
   #results .result-row.win .r-result{color:var(--ink);background:var(--gold)}
   #results .result-row.lose .r-result{color:var(--gray);background:rgba(255,255,255,.05);border:1px solid var(--line)}
+  #results .result-row.scheduled{border-style:dashed}
+  #results .result-row.scheduled .r-result{color:var(--gold);background:rgba(201,162,63,.08);border:1px solid var(--line)}
   #results .results-note{margin-top:22px;font-size:12px;color:var(--gray);border-left:3px solid var(--gold);padding-left:14px}
   @media(max-width:760px){
     #results .result-row{grid-template-columns:1fr;gap:12px;text-align:center}
@@ -489,7 +499,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:60px clamp
 <footer>
   <div class="foot-top">
     <div class="foot-brand">
-      <div class="brand-mark">SGK</div>
+      <img class="brand-mark" src="images/logo.png" alt="SGK ASCENDERS">
       <p>SGK ASCENDERS｜至学館大学 男子バスケットボール部。<br>挑戦×成長×上昇。</p>
     </div>
     <div class="foot-nav">
